@@ -1,0 +1,59 @@
+.top-header{
+
+    width:100%;
+
+    height:62px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.top-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+}
+
+.top-logo-image{
+
+    width:32px;
+
+    height:32px;
+
+    object-fit:contain;
+
+}
+
+.top-logo:hover{
+
+    opacity:.85;
+
+}
+
+.logo-text{
+
+    color:#2f8b7f;
+
+    font-family:"Brandon Grotesque","Avenir Next",sans-serif;
+
+    font-size:23px;
+
+    font-weight:400;
+
+    letter-spacing:.2px;
+
+}

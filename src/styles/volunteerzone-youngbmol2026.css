@@ -1,0 +1,171 @@
+.volunteer-page{
+    width:100%;
+    background:#ffffff;
+}
+
+.volunteer-main{
+    position:relative;
+    width:100%;
+    min-height:760px;
+    background:#ffffff;
+    color:#123b8d;
+}
+
+/* ---------- INTRO ---------- */
+
+.volunteer-intro{
+    width:100%;
+    background:linear-gradient(90deg, #d5f1ef, #85ddd4, #d5f1ef);
+    min-height:360px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    padding:40px 20px;
+}
+
+.volunteer-intro h1{
+    margin:0 0 26px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:28px;
+    font-weight:400;
+    color:#123b8d;
+}
+
+.volunteer-intro p{
+    max-width:520px;
+    margin:0 0 22px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:13px;
+    line-height:1.55;
+    color:#123b8d;
+}
+
+.volunteer-highlight{
+    font-weight:700;
+    text-decoration:underline;
+}
+
+.volunteer-button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:160px;
+    height:28px;
+
+    background:#123b8d;
+    color:white;
+    text-decoration:none;
+
+    border-radius:18px;
+
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:12px;
+    font-weight:700;
+
+    margin-top:6px;
+}
+
+/* ---------- TEAMS ---------- */
+
+.volunteer-teams{
+    width:100%;
+    padding:32px 0 90px;
+    text-align:center;
+    background:#ffffff;
+}
+
+.volunteer-teams h2{
+    margin:0 0 26px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:28px;
+    font-weight:400;
+    color:#123b8d;
+}
+
+.teams-grid{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:26px;
+}
+
+.team-card{
+    width:210px;
+    min-height:210px;
+
+    background:#d9f0ec;
+    border:1px solid rgba(18,59,141,.45);
+    border-radius:8px;
+
+    padding:22px 18px;
+
+    color:#123b8d;
+    text-align:left;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.12);
+}
+
+.team-card h3{
+    margin:0 0 18px;
+    text-align:center;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.35;
+}
+
+.team-card ul{
+    margin:0;
+    padding-left:18px;
+}
+
+.team-card li{
+    margin-bottom:10px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:10.5px;
+    line-height:1.45;
+}
+
+/* ---------- BRUSH ---------- */
+
+.volunteer-brush{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:70px;
+    background:#2f8b7f;
+
+    clip-path:polygon(
+        0 48%,
+        10% 42%,
+        22% 50%,
+        34% 45%,
+        48% 52%,
+        60% 43%,
+        72% 50%,
+        85% 42%,
+        100% 48%,
+        100% 100%,
+        0 100%
+    );
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:800px){
+    .teams-grid{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .team-card{
+        width:80%;
+        max-width:330px;
+    }
+}

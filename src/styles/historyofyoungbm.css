@@ -1,0 +1,340 @@
+.history-page{
+    width:100%;
+    background:white;
+}
+
+.history-main{
+    width:100%;
+    color:#03443d;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+}
+
+/* ================= HERO ================= */
+
+.history-hero{
+    width:100%;
+    height:820px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.history-left{
+    background:#2f7f74;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.history-left h1{
+    color:white;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:56px;
+    font-weight:400;
+    line-height:1.35;
+    letter-spacing:.5px;
+    margin:0 0 86px;
+    text-align:center;
+    position:relative;
+}
+
+.history-left h1::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-30px;
+    transform:translateX(-50%);
+    width:38px;
+    height:1px;
+    background:rgba(255,255,255,.85);
+}
+
+.history-left img{
+    width:270px;
+    background:white;
+    padding:12px;
+    border:4px solid white;
+}
+
+.history-right{
+    background:
+        linear-gradient(to bottom, transparent 88%, #78d5ca 100%),
+        #f7f2e5;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding-top:90px;
+}
+
+.history-right-text{
+    width:520px;
+    max-width:80%;
+}
+
+.history-right h2{
+    margin:0 0 42px;
+    text-align:center;
+    color:#2f8b7f;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:24px;
+    font-weight:600;
+}
+
+.history-right p{
+    margin:0 0 34px;
+    color:#2f8b7f;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:19px;
+    line-height:1.68;
+    font-weight:600;
+}
+
+/* ================= BIOLUTIONARY ================= */
+
+.history-bio{
+    width:1120px;
+    max-width:88%;
+    margin:0 auto;
+    padding:36px 0 48px;
+    text-align:center;
+}
+
+.history-bio img{
+    width:150px;
+    margin-bottom:10px;
+    border-radius:14px;
+    padding:8px;
+    background:#f7f2e5;
+    border:5px double #03443d;
+    box-shadow:0 2px 5px rgba(0,0,0,.35);
+}
+
+.history-bio-caption{
+    width:180px;
+    margin:0 auto 34px !important;
+    text-align:center !important;
+    font-size:13px !important;
+    line-height:1.45 !important;
+    color:#2f8b7f;
+    font-weight:300;
+}
+
+.history-bio h2{
+    margin:0 0 32px;
+    color:#03443d;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:42px;
+    font-weight:300;
+}
+
+.history-bio p{
+    margin:0 0 34px;
+    color:#03443d;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:20px;
+    line-height:1.8;
+    font-weight:300;
+    text-align:left;
+}
+
+/* ================= NEW BEGINNING ================= */
+
+.history-new{
+    background:#2f7f74;
+    color:#dcece8;
+    padding:48px 0 54px;
+}
+
+.history-new h2{
+    text-align:center;
+    margin:0 0 78px;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:68px;
+    font-weight:400;
+    line-height:1.1;
+}
+
+.history-new-content{
+    width:1250px;
+    max-width:88%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:370px 1fr;
+    gap:80px;
+    align-items:start;
+}
+
+.history-new-logo-block{
+    text-align:center;
+    margin-top:20px;
+}
+
+.history-new-logo-block img{
+    width:360px;
+    background:white;
+    display:block;
+}
+
+.history-new-logo-block p{
+    margin:8px 0 0;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:17px;
+    color:#dcece8;
+}
+
+.history-new-text p{
+    margin:0 0 42px;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:23px;
+    line-height:1.65;
+    font-weight:300;
+    color:white;
+}
+
+/* ================= TIMELINE ================= */
+
+.history-timeline{
+    background:#2f7f74;
+    padding:34px 0 70px;
+}
+
+.timeline-wrapper{
+    width:92%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    column-gap:50px;
+    row-gap:82px;
+    align-items:start;
+}
+
+.timeline-card{
+    position:relative;
+    min-height:610px;
+    display:flex;
+    flex-direction:column;
+}
+
+.timeline-card img{
+    width:100%;
+    height:310px;
+    object-fit:cover;
+    display:block;
+}
+
+.timeline-card-text{
+    width:84%;
+    height:405px;
+    background:#d1e5e1;
+    color:#03443d;
+    padding:34px 26px 28px;
+    margin:-45px auto 0;
+    position:relative;
+    z-index:2;
+    overflow:hidden;
+    transform:translateX(22px);
+}
+
+.timeline-card:nth-child(even) .timeline-card-text{
+    transform:translateX(22px);
+}
+
+.timeline-card h3{
+    margin:0 0 22px;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:25px;
+    font-weight:300;
+    color:#03443d;
+}
+
+.timeline-card p{
+    margin:0;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    font-size:19px;
+    line-height:1.55;
+    font-weight:300;
+    color:#03443d;
+}
+
+.timeline-card:nth-child(9){
+    grid-column:1 / 2;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+    .timeline-wrapper{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .timeline-card:nth-child(9){
+        grid-column:auto;
+    }
+}
+
+@media(max-width:900px){
+    .history-hero{
+        height:auto;
+        grid-template-columns:1fr;
+    }
+
+    .history-left{
+        padding:70px 0;
+    }
+
+    .history-right{
+        padding:70px 24px;
+    }
+
+    .history-right-text{
+        max-width:100%;
+    }
+
+    .history-bio{
+        max-width:86%;
+    }
+
+    .history-bio h2{
+        font-size:32px;
+    }
+
+    .history-bio p{
+        font-size:16px;
+    }
+
+    .history-new h2{
+        font-size:42px;
+    }
+
+    .history-new-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .history-new-logo-block img{
+        width:260px;
+        margin:auto;
+    }
+
+    .history-new-text p{
+        font-size:18px;
+        text-align:left;
+    }
+
+    .timeline-wrapper{
+        grid-template-columns:1fr;
+        width:86%;
+    }
+
+    .timeline-card{
+        min-height:auto;
+    }
+
+    .timeline-card-text,
+    .timeline-card:nth-child(even) .timeline-card-text{
+        width:88%;
+        height:auto;
+        min-height:360px;
+        transform:none;
+    }
+}

@@ -1,0 +1,127 @@
+.participant-profile-page{
+    width:100%;
+    background:white;
+}
+
+.participant-profile-main{
+    width:100%;
+    color:#03443d;
+}
+
+.participant-profile-hero{
+    width:100%;
+    height:185px;
+    background:linear-gradient(90deg,#ffe5a6 0%,#dcece8 47%,#76ada4 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.participant-profile-intro{
+    width:390px;
+    max-width:90%;
+}
+
+.participant-profile-intro h1{
+    margin:0 0 26px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:34px;
+    font-weight:400;
+    color:#03443d;
+}
+
+.participant-profile-intro p{
+    margin:0;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:12px;
+    line-height:1.65;
+    text-align:left;
+    color:#03443d;
+}
+
+.participant-profile-content{
+    width:100%;
+    background:white;
+    padding:14px 0 34px;
+}
+
+.participant-profile-grid{
+    width:400px;
+    max-width:92%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:34px;
+    row-gap:38px;
+}
+
+.participant-profile-card{
+    text-align:center;
+    color:#03443d;
+}
+
+.participant-profile-card img{
+    width:150px;
+    height:115px;
+    object-fit:cover;
+    border:1px solid #2f8b7f;
+    display:block;
+    margin:0 auto 12px;
+}
+
+.participant-profile-card h2{
+    margin:0 0 12px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:15px;
+    font-weight:400;
+    color:#03443d;
+}
+
+.participant-profile-card p{
+    margin:0;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:11px;
+    line-height:1.55;
+    text-align:left;
+    color:#03443d;
+}
+
+/* barra tipo brush antes do footer */
+.participant-profile-brush{
+    width:100%;
+    height:34px;
+    background:#29756d;
+    clip-path:polygon(
+        0 58%,
+        8% 45%,
+        15% 54%,
+        24% 38%,
+        34% 51%,
+        45% 43%,
+        56% 56%,
+        68% 39%,
+        79% 52%,
+        91% 41%,
+        100% 55%,
+        100% 100%,
+        0 100%
+    );
+}
+
+@media(max-width:650px){
+    .participant-profile-hero{
+        height:auto;
+        padding:42px 0;
+    }
+
+    .participant-profile-grid{
+        grid-template-columns:1fr;
+        width:260px;
+    }
+
+    .participant-profile-card img{
+        width:180px;
+        height:135px;
+    }
+}

@@ -1,0 +1,556 @@
+.seminar-apply-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.seminar-apply-main {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* HERO */
+
+.seminar-apply-hero{
+    width:100%;
+    min-height:430px;
+
+    display:grid;
+    grid-template-columns:260px 1fr 260px;
+    align-items:center;
+
+    background:linear-gradient(
+        90deg,
+        #f3f0e4 0%,
+        #edf4e9 45%,
+        #dff3ef 100%
+    );
+
+    overflow:hidden;
+}
+
+.seminar-side-image{
+    width:260px;
+    height:430px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.seminar-side-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    display:block;
+}
+
+.seminar-hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:30px 50px;
+    text-align:center;
+}
+
+.seminar-hero-label{
+    margin-bottom:16px;
+
+    font-size:16px;
+    letter-spacing:.20em;
+    text-transform:uppercase;
+
+    color:#2d8278;
+}
+
+.seminar-hero-content h1{
+    margin:0;
+
+    font-size:72px;
+    font-weight:400;
+    line-height:1.05;
+
+    color:#2b8178;
+}
+
+.seminar-hero-subtitle{
+    margin:22px 0 34px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:#315f5a;
+}
+
+.seminar-apply-button{
+    padding:15px 42px;
+
+    background:#2d8278;
+    color:#fff;
+
+    text-decoration:none;
+    font-size:17px;
+
+    transition:.2s;
+}
+
+.seminar-apply-button:hover{
+    background:#256d65;
+}
+
+@media(max-width:1100px){
+
+    .seminar-apply-hero{
+        grid-template-columns:180px 1fr 180px;
+        min-height:380px;
+    }
+
+    .seminar-side-image{
+        width:180px;
+        height:380px;
+    }
+
+    .seminar-hero-content h1{
+        font-size:58px;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .seminar-apply-hero{
+        grid-template-columns:1fr;
+        padding:40px 0;
+    }
+
+    .seminar-side-image{
+        display:none;
+    }
+
+    .seminar-hero-content h1{
+        font-size:48px;
+    }
+
+}
+/* ==========================================================
+   ABOUT
+========================================================== */
+
+.seminar-about-section {
+
+    width: min(940px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 90px 0 80px;
+
+    text-align: center;
+}
+
+.seminar-section-heading span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .17em;
+
+    text-transform: uppercase;
+
+    color: #31887d;
+}
+
+.seminar-section-heading h2 {
+
+    margin: 0;
+
+    font-family:
+        "Brandon Grotesque",
+        "Avenir LT Std",
+        sans-serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    color: #237b72;
+}
+
+.seminar-about-text {
+
+    max-width: 760px;
+
+    margin: 28px auto 0;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 300;
+
+    line-height: 1.8;
+
+    color: #315d58;
+}
+
+/* ==========================================================
+   INFORMATION
+========================================================== */
+
+.seminar-information-section {
+
+    width: 100%;
+
+    padding: 80px 40px;
+
+    background: #dcebe8;
+
+    box-sizing: border-box;
+}
+
+.seminar-information-grid {
+
+    width: min(920px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 90px;
+}
+
+.seminar-information-block h2 {
+
+    margin: 0 0 20px;
+
+    font-family:
+        "Brandon Grotesque",
+        "Avenir LT Std",
+        sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    color: #2d8278;
+}
+
+.seminar-information-block ul {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.seminar-information-block li {
+
+    position: relative;
+
+    padding-left: 22px;
+
+    margin-bottom: 12px;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 300;
+
+    color: #315d58;
+}
+
+.seminar-information-block li::before {
+
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #2d8278;
+}
+
+.seminar-information-message {
+
+    max-width: 720px;
+
+    margin: 60px auto 0;
+
+    text-align: center;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    font-weight: 300;
+
+    color: #315d58;
+}
+
+/* ==========================================================
+   WHO CAN APPLY
+========================================================== */
+
+.seminar-eligibility-section {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.seminar-eligibility-title,
+.seminar-eligibility-content {
+
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px clamp(40px, 8vw, 140px);
+
+    box-sizing: border-box;
+}
+
+.seminar-eligibility-title {
+
+    background: #2d8278;
+
+    color: white;
+}
+
+.seminar-eligibility-title span {
+
+    margin-bottom: 12px;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    opacity: .85;
+}
+
+.seminar-eligibility-title h2 {
+
+    margin: 0;
+
+    font-family:
+        "Brandon Grotesque",
+        "Avenir LT Std",
+        sans-serif;
+
+    font-size: clamp(42px, 4vw, 56px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+.seminar-small-line {
+
+    width: 36px;
+
+    height: 2px;
+
+    margin: 28px 0;
+
+    background: white;
+}
+
+.seminar-eligibility-title strong {
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+.seminar-eligibility-content {
+
+    background: white;
+}
+
+.seminar-eligibility-content p {
+
+    max-width: 520px;
+
+    margin: 0;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+    color: #315d58;
+}
+
+.seminar-bottom-button {
+
+    margin-top: 36px;
+
+    align-self: flex-start;
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .seminar-hero-side {
+        width: 210px;
+    }
+
+    .seminar-hero-side-left {
+        left: 25px;
+    }
+
+    .seminar-hero-side-right {
+        right: 25px;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .seminar-hero-side {
+        display: none;
+    }
+
+    .seminar-apply-hero {
+        min-height: 380px;
+    }
+
+    .seminar-hero-content {
+        width: calc(100% - 40px);
+    }
+
+    .seminar-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .seminar-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .seminar-information-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .seminar-eligibility-section {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 680px) {
+
+    .seminar-apply-hero {
+
+        min-height: 340px;
+    }
+
+    .seminar-hero-content {
+
+        padding: 30px 20px;
+    }
+
+    .seminar-hero-label {
+
+        font-size: 12px;
+    }
+
+    .seminar-hero-content h1 {
+
+        font-size: 34px;
+    }
+
+    .seminar-hero-subtitle {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .seminar-about-section {
+
+        width: calc(100% - 40px);
+
+        padding: 70px 0;
+    }
+
+    .seminar-about-text {
+
+        font-size: 15px;
+    }
+
+    .seminar-information-section {
+
+        padding: 60px 24px;
+    }
+
+    .seminar-information-message {
+
+        text-align: left;
+    }
+
+    .seminar-eligibility-title,
+    .seminar-eligibility-content {
+
+        min-height: auto;
+
+        padding: 55px 30px;
+    }
+
+}

@@ -1,0 +1,102 @@
+.social-page{
+    width:100%;
+    background:#ffffff;
+}
+
+.social-main{
+    width:100%;
+}
+
+/* INTRO */
+
+.social-intro{
+    width:100%;
+    background:white;
+    text-align:center;
+    padding:46px 0 55px;
+    color:#03443d;
+}
+
+.social-intro h1{
+    margin:0 0 28px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:34px;
+    font-weight:400;
+}
+
+.social-intro p{
+    width:430px;
+    max-width:90%;
+    margin:0 auto;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:12px;
+    line-height:1.7;
+    text-align:left;
+}
+
+/* BLOCKS */
+
+.social-block{
+    width:100%;
+    min-height:225px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:stretch;
+}
+
+.social-dark{
+    background:#29756d;
+    color:white;
+}
+
+.social-light{
+    background:#dcece8;
+    color:#03443d;
+}
+
+.social-block img{
+    width:100%;
+    height:225px;
+    object-fit:cover;
+}
+
+.social-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:left;
+    padding:35px 20px;
+}
+
+.social-text h2{
+    width:260px;
+    margin:0 0 24px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:22px;
+    font-weight:600;
+}
+
+.social-text p{
+    width:260px;
+    margin:0;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:12px;
+    line-height:1.65;
+}
+
+@media(max-width:800px){
+    .social-block,
+    .social-block.reverse{
+        grid-template-columns:1fr;
+    }
+
+    .social-block img{
+        height:260px;
+    }
+
+    .social-text h2,
+    .social-text p{
+        width:85%;
+    }
+}

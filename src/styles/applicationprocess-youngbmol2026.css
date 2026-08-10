@@ -1,0 +1,134 @@
+.application-process-page{
+    width:100%;
+    min-height:100vh;
+    background:#ffffff;
+}
+
+.application-process-main{
+    position:relative;
+    width:100%;
+    min-height:650px;
+    background:#ffffff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:35px;
+}
+
+.application-content{
+    width:560px;
+    max-width:90%;
+    text-align:center;
+    color:#123b8d;
+    z-index:2;
+}
+
+.application-buttons{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px;
+    margin-bottom:38px;
+}
+
+.application-left{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.application-left h1{
+    margin:0 0 28px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:42px;
+    font-weight:400;
+    color:#123b8d;
+}
+
+.application-main-button,
+.application-small-button{
+    background:#123b8d;
+    color:#ffffff;
+    text-decoration:none;
+    border-radius:22px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.application-main-button{
+    width:250px;
+    height:42px;
+    font-size:22px;
+}
+
+.application-side-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:42px;
+    margin-top:48px;
+}
+
+.application-small-button{
+    width:140px;
+    height:28px;
+    font-size:11px;
+}
+
+.application-content p{
+    margin:0 0 22px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:13px;
+    line-height:1.65;
+    color:#123b8d;
+}
+
+.application-content h3{
+    margin:18px 0 10px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:13px;
+    font-weight:700;
+    color:#123b8d;
+}
+
+.blue-brush{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:70px;
+    background:#123b8d;
+    clip-path:polygon(
+        0 45%,
+        10% 38%,
+        22% 48%,
+        34% 42%,
+        48% 50%,
+        60% 40%,
+        72% 48%,
+        85% 39%,
+        100% 46%,
+        100% 100%,
+        0 100%
+    );
+}
+
+@media(max-width:700px){
+    .application-buttons{
+        flex-direction:column;
+        gap:24px;
+    }
+
+    .application-side-buttons{
+        gap:14px;
+        margin-top:0;
+    }
+
+    .application-left h1{
+        font-size:34px;
+    }
+}

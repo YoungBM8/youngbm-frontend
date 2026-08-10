@@ -1,0 +1,150 @@
+.student-org-page{
+    width:100%;
+    background:#ffffff;
+}
+
+.student-org-main{
+    width:100%;
+    background:#ffffff;
+    color:#03443d;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+}
+
+/* INTRO */
+
+.student-org-intro{
+    width:860px;
+    max-width:90%;
+    margin:0 auto;
+    padding:38px 0 56px;
+    text-align:center;
+}
+
+.student-org-intro h1{
+    margin:0;
+    color:#03443d;
+    font-size:31px;
+    font-weight:300;
+    line-height:1.25;
+}
+
+.student-org-line{
+    width:28px;
+    height:1px;
+    background:#2f8b7f;
+    margin:28px auto 34px;
+}
+
+.student-org-intro p{
+    width:700px;
+    max-width:100%;
+    margin:0 auto;
+    color:#03443d;
+    font-size:15px;
+    line-height:1.8;
+    font-weight:300;
+}
+
+/* ORGANIZATIONS */
+
+.student-org-list{
+    width:1180px;
+    max-width:92%;
+    margin:0 auto;
+    text-align:center;
+    padding:0 0 36px;
+}
+
+.student-org-list h2{
+    margin:0;
+    color:#03443d;
+    font-size:31px;
+    font-weight:300;
+    line-height:1.25;
+}
+
+.student-org-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    column-gap:48px;
+    row-gap:72px;
+    align-items:start;
+}
+
+.student-org-card{
+    text-align:left;
+    color:#03443d;
+}
+
+.student-org-card img{
+    width:88px;
+    height:88px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 20px;
+}
+
+.student-org-card p{
+    margin:0;
+    color:#03443d;
+    font-size:13px;
+    line-height:1.55;
+    font-weight:300;
+}
+
+/* BRUSH */
+
+.student-org-brush{
+    width:100%;
+    height:38px;
+    background:#2f7f74;
+    margin-top:26px;
+    clip-path:polygon(
+        0 62%,
+        8% 52%,
+        17% 58%,
+        27% 48%,
+        39% 57%,
+        50% 50%,
+        62% 58%,
+        74% 49%,
+        86% 56%,
+        100% 50%,
+        100% 100%,
+        0 100%
+    );
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+    .student-org-intro h1,
+    .student-org-list h2{
+        font-size:26px;
+    }
+
+    .student-org-intro p{
+        font-size:14px;
+    }
+
+    .student-org-grid{
+        grid-template-columns:repeat(3,1fr);
+        column-gap:36px;
+    }
+}
+
+@media(max-width:600px){
+    .student-org-grid{
+        grid-template-columns:repeat(2,1fr);
+        column-gap:30px;
+    }
+
+    .student-org-card img{
+        width:76px;
+        height:76px;
+    }
+
+    .student-org-card p{
+        font-size:11px;
+    }
+}

@@ -1,0 +1,386 @@
+/* ========================================
+   PAGE
+======================================== */
+
+.seminar-speakers-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.seminar-speakers-main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.seminar-speakers-hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 24px 55px;
+    box-sizing: border-box;
+    background: #eef6e9;
+    text-align: center;
+}
+
+.seminar-speakers-hero-content {
+    width: min(760px, 100%);
+    margin: 0 auto;
+}
+
+.seminar-speakers-label {
+    display: block;
+    margin: 0 0 7px;
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #32877d;
+}
+
+.seminar-speakers-hero h1 {
+    margin: 0 0 18px;
+    font-family:
+        "Brandon Grotesque",
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #2b8278;
+}
+
+.seminar-speakers-hero p {
+    width: min(650px, 100%);
+    margin: 0 auto;
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+    color: #37645f;
+}
+
+/* ========================================
+   SPEAKERS LIST
+======================================== */
+
+.seminar-speakers-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   SPEAKER ROW
+======================================== */
+
+.speaker-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: 390px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   REVERSE ROWS
+======================================== */
+
+.speaker-section.speaker-reverse .speaker-image-side {
+    order: 2;
+}
+
+.speaker-section.speaker-reverse .speaker-text-side {
+    order: 1;
+}
+
+/* ========================================
+   IMAGE SIDE
+======================================== */
+
+.speaker-image-side {
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px;
+    box-sizing: border-box;
+}
+
+.speaker-background-0 {
+    background: #cfe2df;
+}
+
+.speaker-background-1 {
+    background: #9dc6bf;
+}
+
+.speaker-background-2 {
+    background: #67a69c;
+}
+
+/* ========================================
+   IMAGES
+======================================== */
+
+.speaker-person,
+.speaker-logo {
+    width: 220px;
+    height: 220px;
+    display: block;
+}
+
+.speaker-person {
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #2e8177;
+    box-sizing: border-box;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.speaker-logo {
+    object-fit: contain;
+    border: none;
+    border-radius: 0;
+}
+
+.speaker-image-side:hover .speaker-person {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+/* ========================================
+   TEXT SIDE
+======================================== */
+
+.speaker-text-side {
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 70px;
+    box-sizing: border-box;
+    background: #ffffff;
+    text-align: center;
+}
+
+.speaker-text-content {
+    width: min(500px,100%);
+    margin: 0 auto;
+}
+
+.speaker-text-content h2 {
+    margin: 0 0 18px;
+    font-family:
+        "Brandon Grotesque",
+        "Avenir LT Std",
+        "Avenir",
+        sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #2b8278;
+}
+
+.speaker-text-content p {
+    margin: 0;
+    font-family:
+        "Avenir LT Std",
+        "Avenir",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    font-size: 14px;
+    line-height: 1.75;
+    font-weight: 300;
+    color: #37635e;
+}
+
+/* ========================================
+   LARGE SCREENS
+======================================== */
+
+@media (min-width: 1500px) {
+
+    .seminar-speakers-hero {
+        padding-top: 65px;
+        padding-bottom: 60px;
+    }
+
+    .speaker-section {
+        min-height: 410px;
+    }
+
+    .speaker-image-side,
+    .speaker-text-side {
+        min-height: 410px;
+    }
+
+    .speaker-person,
+    .speaker-logo {
+        width: 235px;
+        height: 235px;
+    }
+
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .speaker-section {
+        min-height: 350px;
+    }
+
+    .speaker-image-side,
+    .speaker-text-side {
+        min-height: 350px;
+    }
+
+    .speaker-image-side {
+        padding: 45px 30px;
+    }
+
+    .speaker-text-side {
+        padding: 45px 40px;
+    }
+
+    .speaker-person,
+    .speaker-logo {
+        width: 190px;
+        height: 190px;
+    }
+
+    .speaker-text-content h2 {
+        font-size: 25px;
+    }
+
+    .speaker-text-content p {
+        font-size: 13.5px;
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .seminar-speakers-hero {
+        padding: 55px 25px 50px;
+    }
+
+    .seminar-speakers-hero h1 {
+        font-size: 37px;
+        margin-bottom: 17px;
+    }
+
+    .seminar-speakers-hero p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .speaker-section {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .speaker-section.speaker-reverse .speaker-image-side,
+    .speaker-section.speaker-reverse .speaker-text-side {
+        order: initial;
+    }
+
+    .speaker-image-side {
+        min-height: 280px;
+        padding: 50px 25px;
+    }
+
+    .speaker-person,
+    .speaker-logo {
+        width: 170px;
+        height: 170px;
+    }
+
+    .speaker-text-side {
+        min-height: auto;
+        padding: 50px 30px;
+    }
+
+    .speaker-text-content {
+        width: 100%;
+    }
+
+    .speaker-text-content h2 {
+        font-size: 26px;
+        margin-bottom: 16px;
+    }
+
+    .speaker-text-content p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 430px) {
+
+    .seminar-speakers-hero {
+        padding: 45px 20px;
+    }
+
+    .seminar-speakers-hero h1 {
+        font-size: 34px;
+    }
+
+    .seminar-speakers-label {
+        font-size: 11px;
+    }
+
+    .speaker-image-side {
+        min-height: 250px;
+        padding: 40px 20px;
+    }
+
+    .speaker-person,
+    .speaker-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .speaker-text-side {
+        padding: 42px 24px;
+    }
+
+}

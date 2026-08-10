@@ -1,0 +1,219 @@
+/* ================= PAGE ================= */
+
+.applyhere-page{
+    width:100%;
+    background:#ffffff;
+}
+
+/* ================= TOP HERO ================= */
+
+.applyhere-hero{
+    width:100%;
+    background:#ffffff;
+    padding:38px 0 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.applyhere-hero-inner{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+}
+
+.applyhere-apply-button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#1239d4;
+    color:white;
+    text-decoration:none;
+    border:none;
+    border-radius:5px;
+    padding:7px 16px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transform:translateY(18px);
+    transition:.25s;
+}
+
+.applyhere-apply-button:hover{
+    background:#0f2fa8;
+}
+
+.applyhere-arrow-img{
+    width:125px;
+    height:auto;
+    object-fit:contain;
+    transform:rotate(180deg) translateY(-4px);
+}
+
+.applyhere-bmol-logo{
+    width:150px;
+    height:auto;
+    object-fit:contain;
+}
+
+.applyhere-date-text{
+    margin-top:14px;
+    color:#1239d4;
+    font-size:12px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+}
+
+/* ================= BLUE SECTION ================= */
+
+.applyhere-blue-section{
+    width:100%;
+    background:#123b8d;
+    padding:28px 0 34px;
+}
+
+.applyhere-blue-section h2{
+    color:white;
+    text-align:center;
+    font-size:30px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-weight:300;
+    margin:0 0 35px;
+}
+
+.applyhere-icons-grid{
+    width:86%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    row-gap:30px;
+}
+
+.applyhere-icon-item{
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:12px;
+    font-weight:700;
+    text-align:center;
+    text-decoration:none;
+
+    transition:
+        transform .22s ease,
+        opacity .22s ease;
+}
+
+a.applyhere-icon-item{
+    cursor:pointer;
+}
+
+a.applyhere-icon-item:hover{
+    color:white;
+    transform:translateY(-5px);
+}
+
+a.applyhere-icon-item:hover .applyhere-menu-icon{
+    transform:scale(1.08);
+}
+
+.applyhere-menu-icon{
+    transition:transform .22s ease;
+}
+
+.applyhere-icon-disabled{
+    cursor:default;
+}
+
+/* ================= LISBON SECTION ================= */
+
+.applyhere-lisbon-section{
+    width:100%;
+    height:520px;
+    background-image:url("../assets/hero-lisbon.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0;
+}
+
+.applyhere-lisbon-card{
+    width:360px;
+    max-height:430px;
+    overflow:hidden;
+    background:rgba(255,255,255,.80);
+    border:2px solid #1239d4;
+    border-radius:5px;
+    padding:24px 24px;
+    text-align:center;
+    color:#123b8d;
+}
+
+.applyhere-lisbon-card h2{
+    margin:0 0 20px;
+    color:#123b8d;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:34px;
+    font-weight:400;
+    line-height:1.18;
+    letter-spacing:.3px;
+}
+
+.applyhere-lisbon-card p{
+    margin:0 0 16px;
+    color:#123b8d;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:11.4px;
+    line-height:1.55;
+    text-align:center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+    .applyhere-icons-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .applyhere-lisbon-card{
+        width:80%;
+        max-height:none;
+    }
+}
+
+@media(max-width:600px){
+    .applyhere-hero-inner{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .applyhere-arrow-img{
+        width:120px;
+    }
+
+    .applyhere-bmol-logo{
+        width:125px;
+    }
+
+    .applyhere-icons-grid{
+        grid-template-columns:1fr;
+    }
+
+    .applyhere-lisbon-section{
+        height:auto;
+        padding:35px 16px;
+    }
+
+    .applyhere-lisbon-card{
+        width:100%;
+        max-height:none;
+    }
+}

@@ -1,0 +1,255 @@
+.contact-page{
+    width:100%;
+    background:#ffffff;
+}
+
+.contact-main{
+    width:100%;
+    color:#03443d;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+}
+
+/* INTRO */
+
+.contact-intro{
+    width:1040px;
+    max-width:86%;
+    margin:0 auto;
+    padding:34px 0 42px;
+    text-align:center;
+}
+
+.contact-intro h1{
+    margin:0 0 26px;
+    color:#03443d;
+    font-size:48px;
+    font-weight:300;
+    line-height:1.15;
+}
+
+.contact-intro p{
+    margin:0 auto;
+    color:#03443d;
+    font-size:21px;
+    line-height:1.75;
+    font-weight:300;
+    text-align:left;
+}
+
+/* CONTACT BOX */
+
+.contact-box{
+    width:100%;
+    background:#d8e8e4;
+    padding:42px 0 72px;
+}
+
+.contact-top{
+    width:1040px;
+    max-width:86%;
+    margin:0 auto 40px;
+
+    display:grid;
+    grid-template-columns:1fr 180px 1fr;
+    align-items:center;
+    column-gap:70px;
+}
+
+.contact-email p,
+.contact-social p{
+    margin:0 0 16px;
+    color:#2f8b7f;
+    font-size:17px;
+    font-weight:300;
+}
+
+.contact-email a{
+    color:#2f8b7f;
+    font-size:19px;
+    font-weight:700;
+    text-decoration:underline;
+}
+
+.contact-icon{
+    width:132px;
+    height:78px;
+    margin:0 auto;
+
+    background:#c7f6c5;
+    border:2px solid #ffffff;
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.contact-icon svg{
+    width:64px;
+    height:64px;
+    display:block;
+}
+
+.contact-icon svg g{
+    stroke:#111111;
+    stroke-width:3.2;
+}
+
+.contact-icon svg path,
+.contact-icon svg rect{
+    fill:#63d94f;
+}
+
+/* SOCIAL ICONS */
+
+.contact-social{
+    text-align:left;
+}
+
+.contact-social-icons{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+.contact-social-icons a{
+    width:28px;
+    height:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#111111;
+    text-decoration:none;
+    transition:.25s ease;
+}
+
+.contact-social-icons a:hover{
+    color:#2f8b7f;
+    transform:scale(1.08);
+}
+
+.contact-social-icons svg{
+    width:24px;
+    height:24px;
+    fill:currentColor;
+    display:block;
+}
+
+/* FORM */
+
+.contact-form{
+    width:1040px;
+    max-width:86%;
+    margin:0 auto;
+}
+
+.contact-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+    margin-bottom:34px;
+}
+
+.contact-form label{
+    display:flex;
+    flex-direction:column;
+    color:#2f8b7f;
+    font-size:17px;
+    font-weight:300;
+}
+
+.contact-form input{
+    margin-top:10px;
+    height:46px;
+    border:1px solid #2f8b7f;
+    background:white;
+    color:#03443d;
+    font-size:17px;
+    font-weight:300;
+    padding:0 12px;
+    outline:none;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+}
+
+.message-label textarea{
+    margin-top:10px;
+    height:112px;
+    border:1px solid #2f8b7f;
+    background:white;
+    color:#03443d;
+    font-size:17px;
+    font-weight:300;
+    padding:12px;
+    resize:none;
+    outline:none;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+}
+
+.contact-form button{
+    width:315px;
+    height:46px;
+    margin:20px 0 0 auto;
+    display:block;
+
+    border:none;
+    border-radius:4px;
+    background:#2f8b7f;
+    color:white;
+
+    font-size:17px;
+    font-weight:300;
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    cursor:pointer;
+}
+
+.contact-form button:hover{
+    background:#24786e;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+    .contact-intro h1{
+        font-size:38px;
+    }
+
+    .contact-intro p{
+        font-size:18px;
+    }
+
+    .contact-top{
+        grid-template-columns:1fr;
+        row-gap:30px;
+        text-align:center;
+    }
+
+    .contact-social{
+        text-align:center;
+    }
+
+    .contact-social-icons{
+        justify-content:center;
+    }
+
+    .contact-row{
+        grid-template-columns:1fr;
+    }
+
+    .contact-form button{
+        width:100%;
+    }
+}
+
+.contact-status{
+    margin:18px 0 0;
+    color:#2f8b7f;
+    font-size:15px;
+    text-align:center;
+}
+
+.contact-form button:disabled{
+    opacity:.65;
+    cursor:not-allowed;
+}

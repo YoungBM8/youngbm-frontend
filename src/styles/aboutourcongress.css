@@ -1,0 +1,244 @@
+.about-congress-page{
+    width:100%;
+    background:#ffffff;
+    color:#2f8b7f;
+}
+
+/* ================= HERO ================= */
+
+.about-hero{
+    width:96%;
+    margin:22px auto 16px;
+    background:#dcece8;
+    padding:46px 0 42px;
+    text-align:center;
+}
+
+.about-hero h1{
+    margin:0 0 38px;
+    color:#2f8b7f;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:54px;
+    font-weight:300;
+    letter-spacing:.3px;
+}
+
+.about-hero-layout{
+    width:980px;
+    max-width:94%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:210px 1fr 210px;
+    column-gap:34px;
+    align-items:start;
+}
+
+.about-logos-column{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:34px;
+}
+
+.about-logo{
+    display:block;
+    object-fit:contain;
+}
+
+.logo-2017{ width:190px; }
+.logo-2019{ width:170px; }
+
+.about-left-bottom,
+.about-right-bottom{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:24px;
+    margin-top:8px;
+}
+
+.logo-tartu{ width:90px; }
+.logo-malta2024{ width:85px; }
+
+.about-text-center{
+    text-align:left;
+    color:#2f8b7f;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+}
+
+.about-text-center p{
+    margin:0 0 12px;
+    font-size:17px;
+    line-height:1.55;
+    font-weight:300;
+}
+
+.about-bottom-logos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:48px;
+    margin-top:24px;
+}
+
+.logo-gdansk{ width:105px; }
+.logo-lisbon{ width:130px; }
+.logo-2018{ width:160px; }
+.logo-belgrade{ width:190px; }
+.logo-online2025{ width:90px; }
+.logo-thess{ width:115px; }
+
+/* ================= STRUCTURE ================= */
+
+.about-structure{
+    width:100%;
+    background:#29756d;
+    padding:34px 0 36px;
+    text-align:center;
+    color:white;
+}
+
+.about-structure h2{
+    margin:0 0 48px;
+    color:white;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:28px;
+    font-weight:500;
+}
+
+.structure-cards{
+    width:760px;
+    max-width:90%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:64px;
+    align-items:stretch;
+}
+
+.structure-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.structure-card h3{
+    margin:0 0 20px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:21px;
+    font-weight:500;
+}
+
+.structure-card p{
+    flex:1;
+    margin:0 0 24px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    font-weight:300;
+}
+
+.structure-card a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:92px;
+    height:32px;
+    background:white;
+    color:#29756d;
+    text-decoration:none;
+    border-radius:4px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:15px;
+    font-weight:500;
+}
+
+.about-divider{
+    width:92%;
+    height:1px;
+    background:rgba(255,255,255,.75);
+    margin:36px auto 0;
+}
+
+/* ================= COLLABORATE ================= */
+
+.about-collaborate-section{
+    width:100%;
+    background:#c7ddd9;
+    padding:28px 0 48px;
+    display:flex;
+    justify-content:center;
+}
+
+.about-collaborate-box{
+    width:600px;
+    max-width:90%;
+    background:#29756d;
+    color:white;
+    border-radius:14px;
+    text-align:center;
+    padding:18px 42px 24px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+}
+
+.about-collaborate-box h3{
+    margin:0 0 18px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:25px;
+    font-weight:500;
+}
+
+.about-collaborate-box p{
+    margin:0 0 16px;
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:14px;
+    line-height:1.55;
+    font-weight:300;
+}
+
+.about-collaborate-box a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100px;
+    height:28px;
+    margin-top:6px;
+    background:#ffffff;
+    color:#29756d;
+    text-decoration:none;
+    border-radius:12px;
+    font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:15px;
+    font-weight:500;
+    transition:.25s;
+}
+
+.about-collaborate-box a:hover{
+    background:#f3f3f3;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+    .about-hero-layout{
+        grid-template-columns:1fr;
+        row-gap:34px;
+    }
+
+    .about-logos-column{
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .about-text-center{
+        text-align:center;
+    }
+
+    .structure-cards{
+        grid-template-columns:1fr;
+        gap:34px;
+    }
+}

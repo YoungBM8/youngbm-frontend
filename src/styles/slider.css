@@ -1,0 +1,318 @@
+.hero-slider{
+    position: relative;
+    width: 100%;
+    height: 690px;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* ---------------- SLIDES ---------------- */
+
+.slider-track{
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform .8s ease-in-out;
+}
+
+.slide{
+    position: relative;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slide-background{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ---------------- NEWS ---------------- */
+
+.hero-news-title{
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+
+    margin: 0;
+
+    font-family: "Times New Roman", serif;
+    font-size: 5.6rem;
+    font-weight: bold;
+    color: #2147ff;
+    line-height: 1;
+}
+
+/* ---------------- CARD ---------------- */
+
+.news-card{
+    position: absolute;
+
+    top: 125px;
+    left: 25%;
+    transform: translateX(-50%);
+
+    width: 560px;
+    min-height: 430px;
+
+    padding: 24px;
+
+    background: rgba(255,255,255,.94);
+
+    border: 2px solid #2147ff;
+    border-radius: 8px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.18);
+
+    z-index: 20;
+}
+
+.news-card-title{
+    margin-bottom: 18px;
+
+    font-family: "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: normal;
+
+    color: #2147ff;
+}
+
+/* ---------------- IMAGENS ---------------- */
+
+.news-image-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto 18px;
+}
+
+.news-card-image{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+/* BMol */
+
+.bmol-image{
+    width:170px;
+    height:170px;
+}
+
+.bmol-image .news-card-image{
+    object-fit:contain;
+}
+
+/* Seminar */
+
+.seminar-image{
+    width:320px;
+    height:185px;
+
+    border:2px solid #2147ff;
+    border-radius:999px;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.seminar-image .news-card-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ---------------- TEXTO ---------------- */
+
+.news-card-text{
+    margin-top:5px;
+}
+
+.news-card-text p{
+    margin:6px 0;
+
+    font-family:"Times New Roman", serif;
+    font-size:18px;
+    line-height:1.35;
+
+    color:#2147ff;
+}
+
+.sponsors-label{
+    margin-top:18px;
+    margin-bottom:10px;
+
+    font-family:"Times New Roman", serif;
+    font-size:14px;
+
+    color:#2147ff;
+}
+
+.sponsors-row{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+}
+
+.sponsors-row img{
+    width:88px;
+    height:auto;
+    object-fit:contain;
+}
+
+/* ---------------- SETAS ---------------- */
+
+.slider-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+
+    background:none;
+    border:none;
+
+    color:white;
+    font-size:72px;
+
+    cursor:pointer;
+
+    z-index:30;
+
+    transition:opacity .25s;
+}
+
+.slider-arrow:hover{
+    opacity:.8;
+}
+
+.left-arrow{
+    left:25px;
+}
+
+.right-arrow{
+    right:25px;
+}
+
+/* ---------------- DOTS ---------------- */
+
+.slider-dots{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:10px;
+
+    z-index:30;
+}
+
+.slider-dot{
+    width:12px;
+    height:12px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.6);
+
+    cursor:pointer;
+}
+
+.slider-dot.active{
+    background:white;
+}
+
+/* ---------------- RESPONSIVO ---------------- */
+
+@media (max-width:900px){
+
+    .hero-news-title{
+        font-size:4.5rem;
+    }
+
+    .news-card{
+        width:90%;
+        top:115px;
+    }
+
+    .news-card-title{
+        font-size:20px;
+    }
+
+    .news-card-text p{
+        font-size:16px;
+    }
+
+    .bmol-image{
+        width:145px;
+        height:145px;
+    }
+
+    .seminar-image{
+        width:270px;
+        height:160px;
+    }
+
+    .slider-arrow{
+        font-size:52px;
+    }
+
+}
+
+@media (max-width:600px){
+
+    .hero-slider{
+        height:560px;
+    }
+
+    .hero-news-title{
+        font-size:3.2rem;
+        top:12px;
+    }
+
+    .news-card{
+        width:92%;
+        top:90px;
+        padding:18px;
+    }
+
+    .news-card-title{
+        font-size:18px;
+    }
+
+    .news-card-text p{
+        font-size:14px;
+    }
+
+    .bmol-image{
+        width:120px;
+        height:120px;
+    }
+
+    .seminar-image{
+        width:210px;
+        height:125px;
+    }
+
+    .sponsors-row img{
+        width:65px;
+    }
+
+    .slider-arrow{
+        font-size:42px;
+    }
+
+}
