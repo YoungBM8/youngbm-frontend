@@ -3,40 +3,37 @@ import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
 export default function Navbar() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState(null);
 
-    const toggleMobileDropdown = (menu) => {
-        setOpenMobileDropdown((current) =>
-            current === menu ? null : menu
-        );
+    const toggleDropdown = (name) => {
+        setOpenDropdown(openDropdown === name ? null : name);
     };
 
     const closeMobileMenu = () => {
-        setMobileMenuOpen(false);
-        setOpenMobileDropdown(null);
+        setMobileOpen(false);
+        setOpenDropdown(null);
     };
 
     return (
-        <nav className="site-navbar">
+        <nav className="main-navbar">
 
-            {/* =====================================================
-                DESKTOP NAVBAR
-            ===================================================== */}
+            {/* ================= DESKTOP NAVBAR ================= */}
 
             <div className="desktop-navbar">
-                <ul className="desktop-nav-links">
+
+                <ul className="main-nav-links">
 
                     <li>
                         <Link to="/">Home</Link>
                     </li>
 
-                    <li className="desktop-dropdown">
-                        <span className="desktop-dropdown-title">
+                    <li className="dropdown">
+                        <span className="dropdown-title">
                             Young BMol 2026
                         </span>
 
-                        <ul className="desktop-dropdown-menu">
+                        <ul className="dropdown-menu">
                             <li>
                                 <Link to="/young-bmol/apply-here">
                                     Apply Here
@@ -63,12 +60,12 @@ export default function Navbar() {
                         </ul>
                     </li>
 
-                    <li className="desktop-dropdown">
-                        <span className="desktop-dropdown-title">
+                    <li className="dropdown">
+                        <span className="dropdown-title">
                             Young BM Seminar
                         </span>
 
-                        <ul className="desktop-dropdown-menu seminar-dropdown">
+                        <ul className="dropdown-menu seminar-dropdown-menu">
                             <li>
                                 <Link to="/seminar/apply-here">
                                     Apply Here
@@ -87,12 +84,12 @@ export default function Navbar() {
                         <Link to="/faq">FAQ</Link>
                     </li>
 
-                    <li className="desktop-dropdown">
-                        <span className="desktop-dropdown-title">
+                    <li className="dropdown">
+                        <span className="dropdown-title">
                             About
                         </span>
 
-                        <ul className="desktop-dropdown-menu about-dropdown">
+                        <ul className="dropdown-menu about-dropdown-menu">
                             <li>
                                 <Link to="/about/our-congress">
                                     About our Congress
@@ -125,12 +122,12 @@ export default function Navbar() {
                         </ul>
                     </li>
 
-                    <li className="desktop-dropdown">
-                        <span className="desktop-dropdown-title">
+                    <li className="dropdown">
+                        <span className="dropdown-title">
                             Our Network
                         </span>
 
-                        <ul className="desktop-dropdown-menu network-dropdown">
+                        <ul className="dropdown-menu network-dropdown-menu">
                             <li>
                                 <Link to="/our-network/board-2026">
                                     Board 2026
@@ -156,39 +153,30 @@ export default function Navbar() {
                     </li>
 
                 </ul>
+
             </div>
 
 
-            {/* =====================================================
-                MOBILE NAVBAR
-            ===================================================== */}
+            {/* ================= MOBILE NAVBAR ================= */}
 
             <div className="mobile-navbar">
 
-                <div className="mobile-navbar-header">
+                <div className="mobile-navbar-top">
 
-                    <Link
-                        to="/"
-                        className="mobile-navbar-brand"
-                        onClick={closeMobileMenu}
-                    >
+                    <span className="mobile-navbar-title">
                         Young BM Network
-                    </Link>
+                    </span>
 
                     <button
-                        type="button"
                         className={`mobile-menu-button ${
-                            mobileMenuOpen ? "open" : ""
+                            mobileOpen ? "active" : ""
                         }`}
-                        onClick={() =>
-                            setMobileMenuOpen((current) => !current)
-                        }
-                        aria-label={
-                            mobileMenuOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        }
-                        aria-expanded={mobileMenuOpen}
+                        onClick={() => {
+                            setMobileOpen(!mobileOpen);
+                            setOpenDropdown(null);
+                        }}
+                        aria-label="Open navigation menu"
+                        aria-expanded={mobileOpen}
                     >
                         <span></span>
                         <span></span>
@@ -198,297 +186,240 @@ export default function Navbar() {
                 </div>
 
 
-                {/* =================================================
-                    MOBILE MENU
-                ================================================= */}
+                {mobileOpen && (
+                    <div className="mobile-menu">
 
-                <div
-                    className={`mobile-menu ${
-                        mobileMenuOpen ? "mobile-menu-open" : ""
-                    }`}
-                >
-
-                    <Link
-                        to="/"
-                        className="mobile-main-link"
-                        onClick={closeMobileMenu}
-                    >
-                        Home
-                    </Link>
-
-
-                    {/* ================= YOUNG BMOL ================= */}
-
-                    <div className="mobile-dropdown">
-
-                        <button
-                            type="button"
-                            className="mobile-dropdown-button"
-                            onClick={() =>
-                                toggleMobileDropdown("bmol")
-                            }
-                            aria-expanded={
-                                openMobileDropdown === "bmol"
-                            }
+                        <Link
+                            to="/"
+                            onClick={closeMobileMenu}
                         >
-                            <span>Young BMol 2026</span>
+                            Home
+                        </Link>
 
-                            <span
-                                className={`mobile-arrow ${
-                                    openMobileDropdown === "bmol"
-                                        ? "arrow-open"
-                                        : ""
-                                }`}
-                            >
-                                ▾
-                            </span>
-                        </button>
 
-                        <div
-                            className={`mobile-submenu ${
-                                openMobileDropdown === "bmol"
-                                    ? "mobile-submenu-open"
-                                    : ""
-                            }`}
-                        >
-                            <Link
-                                to="/young-bmol/apply-here"
-                                onClick={closeMobileMenu}
-                            >
-                                Apply Here
-                            </Link>
+                        {/* YOUNG BMOL */}
 
-                            <Link
-                                to="/young-bmol/application-process"
-                                onClick={closeMobileMenu}
-                            >
-                                Application process
-                            </Link>
+                        <div className="mobile-dropdown">
 
-                            <Link
-                                to="/young-bmol/volunteer-zone"
-                                onClick={closeMobileMenu}
+                            <button
+                                onClick={() =>
+                                    toggleDropdown("bmol")
+                                }
                             >
-                                Volunteer zone
-                            </Link>
+                                <span>Young BMol 2026</span>
+                                <span className="mobile-arrow">
+                                    {openDropdown === "bmol"
+                                        ? "−"
+                                        : "+"}
+                                </span>
+                            </button>
 
-                            <Link
-                                to="/young-bmol/sponsors"
-                                onClick={closeMobileMenu}
-                            >
-                                Sponsors
-                            </Link>
+                            {openDropdown === "bmol" && (
+                                <div className="mobile-submenu">
+
+                                    <Link
+                                        to="/young-bmol/apply-here"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Apply Here
+                                    </Link>
+
+                                    <Link
+                                        to="/young-bmol/application-process"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Application process
+                                    </Link>
+
+                                    <Link
+                                        to="/young-bmol/volunteer-zone"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Volunteer zone
+                                    </Link>
+
+                                    <Link
+                                        to="/young-bmol/sponsors"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Sponsors
+                                    </Link>
+
+                                </div>
+                            )}
+
                         </div>
 
-                    </div>
 
+                        {/* SEMINAR */}
 
-                    {/* ================= SEMINAR ================= */}
+                        <div className="mobile-dropdown">
 
-                    <div className="mobile-dropdown">
-
-                        <button
-                            type="button"
-                            className="mobile-dropdown-button"
-                            onClick={() =>
-                                toggleMobileDropdown("seminar")
-                            }
-                            aria-expanded={
-                                openMobileDropdown === "seminar"
-                            }
-                        >
-                            <span>Young BM Seminar</span>
-
-                            <span
-                                className={`mobile-arrow ${
-                                    openMobileDropdown === "seminar"
-                                        ? "arrow-open"
-                                        : ""
-                                }`}
+                            <button
+                                onClick={() =>
+                                    toggleDropdown("seminar")
+                                }
                             >
-                                ▾
-                            </span>
-                        </button>
+                                <span>Young BM Seminar</span>
+                                <span className="mobile-arrow">
+                                    {openDropdown === "seminar"
+                                        ? "−"
+                                        : "+"}
+                                </span>
+                            </button>
 
-                        <div
-                            className={`mobile-submenu ${
-                                openMobileDropdown === "seminar"
-                                    ? "mobile-submenu-open"
-                                    : ""
-                            }`}
-                        >
-                            <Link
-                                to="/seminar/apply-here"
-                                onClick={closeMobileMenu}
-                            >
-                                Apply Here
-                            </Link>
+                            {openDropdown === "seminar" && (
+                                <div className="mobile-submenu">
 
-                            <Link
-                                to="/seminar/speakers"
-                                onClick={closeMobileMenu}
-                            >
-                                Speakers
-                            </Link>
+                                    <Link
+                                        to="/seminar/apply-here"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Apply Here
+                                    </Link>
+
+                                    <Link
+                                        to="/seminar/speakers"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Speakers
+                                    </Link>
+
+                                </div>
+                            )}
+
                         </div>
 
-                    </div>
 
+                        {/* FAQ */}
 
-                    {/* ================= FAQ ================= */}
-
-                    <Link
-                        to="/faq"
-                        className="mobile-main-link"
-                        onClick={closeMobileMenu}
-                    >
-                        FAQ
-                    </Link>
-
-
-                    {/* ================= ABOUT ================= */}
-
-                    <div className="mobile-dropdown">
-
-                        <button
-                            type="button"
-                            className="mobile-dropdown-button"
-                            onClick={() =>
-                                toggleMobileDropdown("about")
-                            }
-                            aria-expanded={
-                                openMobileDropdown === "about"
-                            }
+                        <Link
+                            to="/faq"
+                            onClick={closeMobileMenu}
                         >
-                            <span>About</span>
+                            FAQ
+                        </Link>
 
-                            <span
-                                className={`mobile-arrow ${
-                                    openMobileDropdown === "about"
-                                        ? "arrow-open"
-                                        : ""
-                                }`}
-                            >
-                                ▾
-                            </span>
-                        </button>
 
-                        <div
-                            className={`mobile-submenu ${
-                                openMobileDropdown === "about"
-                                    ? "mobile-submenu-open"
-                                    : ""
-                            }`}
-                        >
-                            <Link
-                                to="/about/our-congress"
-                                onClick={closeMobileMenu}
-                            >
-                                About our Congress
-                            </Link>
+                        {/* ABOUT */}
 
-                            <Link
-                                to="/about/academic-part"
-                                onClick={closeMobileMenu}
-                            >
-                                Academic part
-                            </Link>
+                        <div className="mobile-dropdown">
 
-                            <Link
-                                to="/about/social-part"
-                                onClick={closeMobileMenu}
+                            <button
+                                onClick={() =>
+                                    toggleDropdown("about")
+                                }
                             >
-                                Social part
-                            </Link>
+                                <span>About</span>
+                                <span className="mobile-arrow">
+                                    {openDropdown === "about"
+                                        ? "−"
+                                        : "+"}
+                                </span>
+                            </button>
 
-                            <Link
-                                to="/about/participant-profile"
-                                onClick={closeMobileMenu}
-                            >
-                                Participant profile
-                            </Link>
+                            {openDropdown === "about" && (
+                                <div className="mobile-submenu">
 
-                            <Link
-                                to="/about/history-of-young-bm"
-                                onClick={closeMobileMenu}
-                            >
-                                History of Young BM
-                            </Link>
+                                    <Link
+                                        to="/about/our-congress"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        About our Congress
+                                    </Link>
+
+                                    <Link
+                                        to="/about/academic-part"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Academic part
+                                    </Link>
+
+                                    <Link
+                                        to="/about/social-part"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Social part
+                                    </Link>
+
+                                    <Link
+                                        to="/about/participant-profile"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Participant profile
+                                    </Link>
+
+                                    <Link
+                                        to="/about/history-of-young-bm"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        History of Young BM
+                                    </Link>
+
+                                </div>
+                            )}
+
                         </div>
 
-                    </div>
 
+                        {/* OUR NETWORK */}
 
-                    {/* ================= OUR NETWORK ================= */}
+                        <div className="mobile-dropdown">
 
-                    <div className="mobile-dropdown">
-
-                        <button
-                            type="button"
-                            className="mobile-dropdown-button"
-                            onClick={() =>
-                                toggleMobileDropdown("network")
-                            }
-                            aria-expanded={
-                                openMobileDropdown === "network"
-                            }
-                        >
-                            <span>Our Network</span>
-
-                            <span
-                                className={`mobile-arrow ${
-                                    openMobileDropdown === "network"
-                                        ? "arrow-open"
-                                        : ""
-                                }`}
+                            <button
+                                onClick={() =>
+                                    toggleDropdown("network")
+                                }
                             >
-                                ▾
-                            </span>
-                        </button>
+                                <span>Our Network</span>
+                                <span className="mobile-arrow">
+                                    {openDropdown === "network"
+                                        ? "−"
+                                        : "+"}
+                                </span>
+                            </button>
 
-                        <div
-                            className={`mobile-submenu ${
-                                openMobileDropdown === "network"
-                                    ? "mobile-submenu-open"
-                                    : ""
-                            }`}
-                        >
-                            <Link
-                                to="/our-network/board-2026"
-                                onClick={closeMobileMenu}
-                            >
-                                Board 2026
-                            </Link>
+                            {openDropdown === "network" && (
+                                <div className="mobile-submenu">
 
-                            <Link
-                                to="/our-network/collaborators-partners"
-                                onClick={closeMobileMenu}
-                            >
-                                Collaborators &amp; Partners
-                            </Link>
+                                    <Link
+                                        to="/our-network/board-2026"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Board 2026
+                                    </Link>
 
-                            <Link
-                                to="/our-network/student-organizations"
-                                onClick={closeMobileMenu}
-                            >
-                                Student Organizations
-                            </Link>
+                                    <Link
+                                        to="/our-network/collaborators-partners"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Collaborators &amp; Partners
+                                    </Link>
+
+                                    <Link
+                                        to="/our-network/student-organizations"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Student Organizations
+                                    </Link>
+
+                                </div>
+                            )}
+
                         </div>
 
+
+                        {/* CONTACT */}
+
+                        <Link
+                            to="/contact"
+                            onClick={closeMobileMenu}
+                        >
+                            Contact
+                        </Link>
+
                     </div>
-
-
-                    {/* ================= CONTACT ================= */}
-
-                    <Link
-                        to="/contact"
-                        className="mobile-main-link"
-                        onClick={closeMobileMenu}
-                    >
-                        Contact
-                    </Link>
-
-                </div>
+                )}
 
             </div>
 

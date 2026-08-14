@@ -1,3 +1,5 @@
+/* ================= FAQ PAGE ================= */
+
 .faq-page{
     width:100%;
     min-height:100vh;
@@ -7,15 +9,36 @@
 .faq-main{
     width:100%;
     color:#031f1d;
-    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir Next",
+        Avenir,
+        "Helvetica Neue",
+        sans-serif;
+
+    box-sizing:border-box;
 }
+
+.faq-main *,
+.faq-main *::before,
+.faq-main *::after{
+    box-sizing:border-box;
+}
+
 
 /* ================= HERO ================= */
 
 .faq-hero{
     width:100%;
-    min-height:345px;
-    padding:64px 20px 58px;
+
+    /* IMPORTANTE:
+       removemos o min-height que estava a tornar
+       esta secção demasiado comprida */
+    min-height:0;
+
+    padding:48px 20px 50px;
+
     text-align:center;
 
     background:
@@ -38,22 +61,28 @@
 }
 
 .faq-hero h1{
-    margin:0 0 42px;
+    margin:0 0 34px;
+
     color:#03443d;
+
     font-size:40px;
     font-weight:400;
+    line-height:1.2;
+
     letter-spacing:.2px;
 }
 
 .faq-contact{
-    margin-bottom:34px;
+    margin-bottom:28px;
 }
 
 .faq-contact p{
-    margin:0 0 8px;
+    margin:0 0 7px;
+
     color:#03443d;
+
     font-size:15px;
-    line-height:1.65;
+    line-height:1.6;
     font-weight:300;
 }
 
@@ -64,10 +93,13 @@
 .faq-introduction{
     width:700px;
     max-width:90%;
+
     margin:0 auto;
+
     color:#03443d;
+
     font-size:15px;
-    line-height:1.85;
+    line-height:1.75;
     font-weight:300;
 }
 
@@ -76,11 +108,13 @@
     text-decoration:underline;
 }
 
+
 /* ================= COMMON FAQ ================= */
 
 .faq-container{
     width:710px;
     max-width:88%;
+
     margin:0 auto;
 }
 
@@ -94,7 +128,9 @@
 
 .faq-item h2{
     margin:0 0 8px;
+
     color:#031f1d;
+
     font-size:16px;
     font-weight:700;
     line-height:1.55;
@@ -102,7 +138,9 @@
 
 .faq-answer p{
     margin:0 0 8px;
+
     color:#031f1d;
+
     font-size:15px;
     line-height:1.72;
     font-weight:300;
@@ -119,17 +157,21 @@
 
 .faq-answer li{
     margin-bottom:8px;
+
     color:#031f1d;
+
     font-size:15px;
     line-height:1.45;
     font-weight:300;
 }
 
+
 /* ================= TOP GREEN SECTION ================= */
 
 .faq-top-section{
     width:100%;
-    padding:62px 0 88px;
+
+    padding:58px 0 72px;
 
     background:
         radial-gradient(
@@ -138,7 +180,6 @@
             rgba(255,255,255,.05) 25%,
             rgba(255,255,255,0) 55%
         ),
-
         linear-gradient(
             90deg,
             #d6f2ee 0%,
@@ -149,11 +190,14 @@
         );
 }
 
+
 /* ================= BOTTOM LIGHT SECTION ================= */
 
 .faq-bottom-section{
     position:relative;
+
     width:100%;
+
     padding:58px 0 0;
 
     background:
@@ -178,11 +222,13 @@
     margin-bottom:0;
 }
 
+
 /* ================= BRUSH ================= */
 
 .faq-brush{
     width:100%;
     height:40px;
+
     background:#2f7f74;
 
     clip-path:polygon(
@@ -201,20 +247,36 @@
     );
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
+
     .faq-hero{
-        min-height:auto;
-        padding:50px 18px;
+        min-height:0;
+
+        padding:42px 18px 44px;
     }
 
     .faq-hero h1{
+        margin-bottom:30px;
+
         font-size:32px;
     }
 
+    .faq-contact{
+        margin-bottom:25px;
+    }
+
+    .faq-introduction{
+        max-width:92%;
+
+        font-size:15px;
+        line-height:1.75;
+    }
+
     .faq-top-section{
-        padding:48px 0 68px;
+        padding:48px 0 62px;
     }
 
     .faq-bottom-section{
@@ -228,5 +290,75 @@
 
     .faq-answer ul{
         margin-left:32px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .faq-hero{
+        padding:38px 18px 40px;
+    }
+
+    .faq-hero h1{
+        margin-bottom:26px;
+
+        font-size:28px;
+        line-height:1.25;
+    }
+
+    .faq-contact{
+        margin-bottom:22px;
+    }
+
+    .faq-contact p{
+        font-size:14px;
+        line-height:1.55;
+    }
+
+    .faq-introduction{
+        max-width:100%;
+
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .faq-container{
+        width:100%;
+        max-width:90%;
+    }
+
+    .faq-top-section{
+        padding:42px 0 54px;
+    }
+
+    .faq-bottom-section{
+        padding-top:42px;
+    }
+
+    .faq-item,
+    .faq-bottom-section .faq-item{
+        margin-bottom:48px;
+    }
+
+    .faq-item h2{
+        font-size:15px;
+        line-height:1.5;
+    }
+
+    .faq-answer p,
+    .faq-answer li{
+        font-size:14px;
+        line-height:1.65;
+    }
+
+    .faq-answer ul{
+        margin-left:22px;
+    }
+
+    .faq-brush{
+        height:30px;
     }
 }

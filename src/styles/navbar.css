@@ -1,16 +1,18 @@
 /* =========================================================
-   GLOBAL NAVBAR
+   NAVBAR
    ========================================================= */
 
-.site-navbar {
+.main-navbar {
     width: 100%;
     position: relative;
     z-index: 1000;
+    background: #338c82;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
 }
 
 
 /* =========================================================
-   DESKTOP NAVBAR
+   DESKTOP
    ========================================================= */
 
 .desktop-navbar {
@@ -18,33 +20,28 @@
     height: 62px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    background: #338c82;
-
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
-.desktop-nav-links {
+
+.main-nav-links {
     display: flex;
     align-items: center;
     justify-content: center;
 
     gap: 34px;
 
-    margin: 0;
-    padding: 0;
-
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 
-/* =========================================================
-   DESKTOP ITEMS
-   ========================================================= */
-
-.desktop-nav-links > li {
+.main-nav-links > li {
     position: relative;
 
     height: 62px;
@@ -59,8 +56,8 @@
    DESKTOP LINKS
    ========================================================= */
 
-.desktop-nav-links > li > a,
-.desktop-dropdown-title {
+.main-nav-links > li > a,
+.dropdown-title {
     position: relative;
 
     height: 62px;
@@ -70,7 +67,6 @@
     justify-content: center;
 
     color: #ffffff;
-
     text-decoration: none;
 
     font-family:
@@ -84,7 +80,6 @@
 
     font-size: 20px;
     font-weight: 300;
-
     line-height: 1;
 
     letter-spacing: 0.1px;
@@ -98,19 +93,20 @@
         color 0.2s ease;
 }
 
-.desktop-nav-links > li > a:hover,
-.desktop-dropdown:hover > .desktop-dropdown-title {
+
+.main-nav-links > li > a:hover,
+.dropdown:hover > .dropdown-title {
     color: #ffffff;
     opacity: 0.94;
 }
 
 
 /* =========================================================
-   DESKTOP UNDERLINE
+   WHITE UNDERLINE
    ========================================================= */
 
-.desktop-nav-links > li > a::after,
-.desktop-dropdown-title::after {
+.main-nav-links > li > a::after,
+.dropdown-title::after {
     content: "";
 
     position: absolute;
@@ -130,8 +126,9 @@
     transition: width 0.22s ease;
 }
 
-.desktop-nav-links > li > a:hover::after,
-.desktop-dropdown:hover > .desktop-dropdown-title::after {
+
+.main-nav-links > li:hover > a::after,
+.dropdown:hover > .dropdown-title::after {
     width: 100%;
 }
 
@@ -140,41 +137,41 @@
    DESKTOP DROPDOWNS
    ========================================================= */
 
-.desktop-dropdown {
+.dropdown {
     position: relative;
 }
 
-.desktop-dropdown-menu {
+
+.dropdown-menu {
     position: absolute;
 
     top: 100%;
     left: 50%;
 
+    width: max-content;
     min-width: 225px;
 
-    margin: 0;
     padding: 0;
+    margin: 0;
 
     list-style: none;
 
     background: #338c82;
 
+    border: none;
     border-radius: 12px;
 
     overflow: hidden;
 
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
 
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
 
     transform:
         translateX(-50%)
-        translateY(5px);
+        translateY(4px);
 
     transition:
         opacity 0.18s ease,
@@ -185,14 +182,12 @@
 }
 
 
-/* Show desktop dropdown */
+/* Hover desktop */
 
-.desktop-dropdown:hover .desktop-dropdown-menu,
-.desktop-dropdown:focus-within .desktop-dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
     opacity: 1;
-
     visibility: visible;
-
     pointer-events: auto;
 
     transform:
@@ -201,11 +196,9 @@
 }
 
 
-/* =========================================================
-   DESKTOP DROPDOWN BRIDGE
-   ========================================================= */
+/* Invisible bridge */
 
-.desktop-dropdown::after {
+.dropdown::after {
     content: "";
 
     position: absolute;
@@ -214,39 +207,39 @@
     left: -12px;
 
     width: calc(100% + 24px);
-
     height: 12px;
 }
 
 
 /* =========================================================
-   DESKTOP DROPDOWN LINKS
+   DROPDOWN ITEMS
    ========================================================= */
 
-.desktop-dropdown-menu li {
+.dropdown-menu li {
     width: 100%;
 
     border-bottom:
         1px solid rgba(255, 255, 255, 0.06);
 }
 
-.desktop-dropdown-menu li:last-child {
+
+.dropdown-menu li:last-child {
     border-bottom: none;
 }
 
-.desktop-dropdown-menu a {
+
+.dropdown-menu a {
     width: 100%;
-    min-height: 46px;
+    height: 46px;
 
     display: flex;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 0 16px;
+    box-sizing: border-box;
 
     color: #ffffff;
-
     text-decoration: none;
 
     text-align: center;
@@ -261,10 +254,8 @@
         sans-serif;
 
     font-size: 16px;
-
     font-weight: 300;
-
-    line-height: 1.2;
+    line-height: 1;
 
     white-space: nowrap;
 
@@ -273,41 +264,53 @@
         opacity 0.18s ease;
 }
 
-.desktop-dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.08);
 
+.dropdown-menu a:hover {
     color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.dropdown-menu a::after {
+    display: none;
 }
 
 
 /* =========================================================
-   DESKTOP DROPDOWN WIDTHS
+   DROPDOWN WIDTHS
    ========================================================= */
 
-.about-dropdown {
+.about-dropdown-menu {
     min-width: 260px;
 }
 
-.network-dropdown {
-    min-width: 295px;
-}
 
-.seminar-dropdown {
-    min-width: 225px;
+.network-dropdown-menu {
+    min-width: 295px;
 }
 
 
 /* =========================================================
-   MOBILE NAVBAR
+   ACCESSIBILITY
    ========================================================= */
 
-/*
-   CRITICAL:
+.main-nav-links a:focus-visible,
+.dropdown-title:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.95);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
 
-   Mobile navbar is COMPLETELY disabled by default.
 
-   Therefore on desktop it cannot appear.
-*/
+.dropdown-menu a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: -3px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 .mobile-navbar {
     display: none;
@@ -320,55 +323,40 @@
 
 @media (max-width: 700px) {
 
-    /* -----------------------------------------------------
-       HARD SWITCH:
-
-       Desktop = OFF
-       Mobile = ON
-    ----------------------------------------------------- */
-
+    /* Hide desktop completely */
     .desktop-navbar {
-        display: none !important;
+        display: none;
     }
 
+
+    /* Show mobile completely */
     .mobile-navbar {
-        display: block !important;
-
+        display: block;
         width: 100%;
-
-        background: #338c82;
-
-        box-shadow:
-            0 1px 5px rgba(0, 0, 0, 0.08);
     }
 
 
-    /* =====================================================
-       MOBILE HEADER
-    ===================================================== */
+    /* -----------------------------------------------------
+       TOP BAR
+       ----------------------------------------------------- */
 
-    .mobile-navbar-header {
+    .mobile-navbar-top {
         width: 100%;
-
-        min-height: 62px;
+        height: 62px;
 
         display: flex;
-
         align-items: center;
         justify-content: space-between;
 
-        padding: 0 22px;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        background: #338c82;
     }
 
 
-    /* =====================================================
-       MOBILE BRAND
-    ===================================================== */
-
-    .mobile-navbar-brand {
+    .mobile-navbar-title {
         color: #ffffff;
-
-        text-decoration: none;
 
         font-family:
             "Avenir Light",
@@ -379,48 +367,41 @@
             Arial,
             sans-serif;
 
-        font-size: 18px;
-
+        font-size: 20px;
         font-weight: 300;
-
-        line-height: 1;
 
         white-space: nowrap;
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        HAMBURGER
-    ===================================================== */
+       ----------------------------------------------------- */
 
     .mobile-menu-button {
         width: 42px;
         height: 42px;
 
-        padding: 7px;
-
         display: flex;
-
         flex-direction: column;
-
-        align-items: center;
         justify-content: center;
+        align-items: center;
 
         gap: 5px;
 
-        background: transparent;
+        padding: 0;
 
         border: none;
+        background: transparent;
 
         cursor: pointer;
-
-        -webkit-tap-highlight-color: transparent;
     }
+
 
     .mobile-menu-button span {
         display: block;
 
-        width: 27px;
+        width: 30px;
         height: 2px;
 
         background: #ffffff;
@@ -433,63 +414,59 @@
     }
 
 
-    /* Hamburger → X */
+    /* X animation */
 
-    .mobile-menu-button.open span:nth-child(1) {
+    .mobile-menu-button.active span:nth-child(1) {
         transform:
             translateY(7px)
             rotate(45deg);
     }
 
-    .mobile-menu-button.open span:nth-child(2) {
+
+    .mobile-menu-button.active span:nth-child(2) {
         opacity: 0;
     }
 
-    .mobile-menu-button.open span:nth-child(3) {
+
+    .mobile-menu-button.active span:nth-child(3) {
         transform:
             translateY(-7px)
             rotate(-45deg);
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        MOBILE MENU
-    ===================================================== */
+       ----------------------------------------------------- */
 
     .mobile-menu {
         width: 100%;
 
-        display: none;
-
-        flex-direction: column;
-
         background: #338c82;
 
-        border-top:
-            1px solid rgba(255, 255, 255, 0.12);
-    }
+        box-sizing: border-box;
 
-    .mobile-menu.mobile-menu-open {
-        display: flex;
+        padding: 0 0 10px;
     }
 
 
-    /* =====================================================
-       MOBILE MAIN LINKS
-    ===================================================== */
-
-    .mobile-main-link {
+    .mobile-menu > a,
+    .mobile-dropdown > button {
         width: 100%;
-
-        min-height: 54px;
+        min-height: 52px;
 
         display: flex;
-
         align-items: center;
+        justify-content: space-between;
 
         padding: 0 24px;
-
         box-sizing: border-box;
+
+        border: none;
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.12);
+
+        background: transparent;
 
         color: #ffffff;
 
@@ -504,136 +481,64 @@
             Arial,
             sans-serif;
 
-        font-size: 17px;
-
-        font-weight: 300;
-
-        border-bottom:
-            1px solid rgba(255, 255, 255, 0.08);
-
-        transition:
-            background 0.15s ease;
-    }
-
-    .mobile-main-link:active {
-        background:
-            rgba(255, 255, 255, 0.10);
-    }
-
-
-    /* =====================================================
-       MOBILE DROPDOWN
-    ===================================================== */
-
-    .mobile-dropdown {
-        width: 100%;
-
-        border-bottom:
-            1px solid rgba(255, 255, 255, 0.08);
-    }
-
-
-    /* =====================================================
-       MOBILE DROPDOWN BUTTON
-    ===================================================== */
-
-    .mobile-dropdown-button {
-        width: 100%;
-
-        min-height: 54px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: space-between;
-
-        padding: 0 24px;
-
-        box-sizing: border-box;
-
-        background: transparent;
-
-        border: none;
-
-        color: #ffffff;
-
-        font-family:
-            "Avenir Light",
-            "Avenir LT Std",
-            "Avenir Next",
-            Avenir,
-            "Helvetica Neue",
-            Arial,
-            sans-serif;
-
-        font-size: 17px;
-
+        font-size: 18px;
         font-weight: 300;
 
         text-align: left;
 
         cursor: pointer;
-
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .mobile-dropdown-button:active {
-        background:
-            rgba(255, 255, 255, 0.10);
     }
 
 
-    /* =====================================================
-       MOBILE ARROW
-    ===================================================== */
+    .mobile-menu > a:active,
+    .mobile-dropdown > button:active {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE DROPDOWN
+       ----------------------------------------------------- */
+
+    .mobile-dropdown {
+        width: 100%;
+    }
+
+
+    .mobile-dropdown > button {
+        appearance: none;
+    }
+
 
     .mobile-arrow {
-        font-size: 18px;
+        font-size: 22px;
+        font-weight: 300;
 
         line-height: 1;
 
-        transition:
-            transform 0.2s ease;
-    }
-
-    .mobile-arrow.arrow-open {
-        transform: rotate(180deg);
+        margin-left: 15px;
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        MOBILE SUBMENU
-    ===================================================== */
+       ----------------------------------------------------- */
 
     .mobile-submenu {
-        display: none;
+        width: 100%;
 
-        flex-direction: column;
-
-        background:
-            rgba(0, 0, 0, 0.08);
+        background: rgba(0, 0, 0, 0.07);
     }
 
-    .mobile-submenu.mobile-submenu-open {
-        display: flex;
-    }
-
-
-    /* =====================================================
-       MOBILE SUBMENU LINKS
-    ===================================================== */
 
     .mobile-submenu a {
         width: 100%;
-
         min-height: 48px;
 
         display: flex;
-
         align-items: center;
 
         padding: 0 24px 0 42px;
-
         box-sizing: border-box;
 
         color: #ffffff;
@@ -649,32 +554,66 @@
             Arial,
             sans-serif;
 
-        font-size: 15px;
-
+        font-size: 16px;
         font-weight: 300;
 
-        border-top:
-            1px solid rgba(255, 255, 255, 0.05);
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
     }
 
+
+    .mobile-submenu a:last-child {
+        border-bottom: none;
+    }
+
+
     .mobile-submenu a:active {
-        background:
-            rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.08);
     }
 }
 
 
 /* =========================================================
-   DESKTOP HARD SWITCH
+   TABLET / SMALL DESKTOP
    ========================================================= */
 
-@media (min-width: 701px) {
+@media (min-width: 701px) and (max-width: 1100px) {
 
-    .desktop-navbar {
-        display: flex !important;
+    .main-nav-links {
+        gap: 24px;
     }
 
-    .mobile-navbar {
+
+    .main-nav-links > li > a,
+    .dropdown-title {
+        font-size: 18px;
+    }
+
+
+    .dropdown-menu a {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /*
+       Important:
+       desktop dropdowns are completely disabled on mobile.
+       Mobile uses React state instead.
+    */
+
+    .desktop-navbar {
         display: none !important;
+    }
+
+
+    .mobile-navbar {
+        display: block !important;
     }
 }
