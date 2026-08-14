@@ -1,21 +1,411 @@
-.desktop-navbar-wrapper {
-    display: block;
+/* =========================================================
+   DESKTOP NAVBAR
+   ========================================================= */
+
+.main-navbar {
+    width: 100%;
+    height: 62px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 24px;
+
+    background: #338c82;
+
+    position: relative;
+    z-index: 1000;
+
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
 }
 
-.mobile-navbar-wrapper {
+.main-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 34px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav-links > li {
+    position: relative;
+
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   DESKTOP MAIN LINKS
+   ========================================================= */
+
+.main-nav-links > li > a,
+.dropdown-title {
+    position: relative;
+
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family:
+        "Avenir Light",
+        "Avenir LT Std",
+        "Avenir Next",
+        Avenir,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0.1px;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
+}
+
+.main-nav-links > li > a:hover,
+.dropdown:hover > .dropdown-title {
+    color: #ffffff;
+    opacity: 0.94;
+}
+
+
+/* =========================================================
+   UNDERLINE
+   ========================================================= */
+
+.main-nav-links > li > a::after,
+.dropdown-title::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffffff;
+    border-radius: 999px;
+
+    transform: translateX(-50%);
+
+    transition: width 0.22s ease;
+}
+
+.main-nav-links > li:hover > a::after,
+.dropdown:hover > .dropdown-title::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DESKTOP DROPDOWN
+   ========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    width: max-content;
+    min-width: 225px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    background: #338c82;
+
+    border: none;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform:
+        translateX(-50%)
+        translateY(4px);
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease,
+        visibility 0.18s ease;
+
+    z-index: 2000;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(6px);
+}
+
+
+/* =========================================================
+   DROPDOWN INVISIBLE BRIDGE
+   ========================================================= */
+
+.dropdown::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: -12px;
+
+    width: calc(100% + 24px);
+    height: 12px;
+}
+
+
+/* =========================================================
+   DROPDOWN ITEMS
+   ========================================================= */
+
+.dropdown-menu li {
+    width: 100%;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+
+    font-family:
+        "Avenir Light",
+        "Avenir LT Std",
+        "Avenir Next",
+        Avenir,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.18s ease,
+        opacity 0.18s ease;
+}
+
+.dropdown-menu a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-menu a::after {
     display: none;
 }
 
 
-/* MOBILE */
+/* =========================================================
+   DROPDOWN WIDTHS
+   ========================================================= */
+
+.about-dropdown-menu {
+    min-width: 260px;
+}
+
+.network-dropdown-menu {
+    min-width: 295px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.main-nav-links a:focus-visible,
+.dropdown-title:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.95);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.dropdown-menu a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: -3px;
+}
+
+
+/* =========================================================
+   DESKTOP RESPONSIVE SIZING
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .main-nav-links {
+        gap: 24px;
+    }
+
+    .main-nav-links > li > a,
+    .dropdown-title {
+        font-size: 18px;
+    }
+
+    .dropdown-menu a {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .main-navbar {
+        padding: 0 14px;
+    }
+
+    .main-nav-links {
+        gap: 16px;
+    }
+
+    .main-nav-links > li > a,
+    .dropdown-title {
+        font-size: 16px;
+    }
+
+    .dropdown-menu {
+        min-width: 210px;
+        max-width: calc(100vw - 24px);
+    }
+
+    .about-dropdown-menu {
+        min-width: 240px;
+    }
+
+    .network-dropdown-menu {
+        min-width: 270px;
+    }
+
+    .dropdown-menu a {
+        height: 44px;
+        padding: 0 16px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
+
+/*
+   IMPORTANT:
+
+   A navbar mobile começa SEMPRE escondida.
+
+   Portanto, em computadores/tablets:
+       .mobile-navbar = NUNCA aparece
+*/
+
+.mobile-navbar {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+/* =========================================================
+   MOBILE — ATÉ 700PX
+   ========================================================= */
 
 @media (max-width: 700px) {
 
-    .desktop-navbar-wrapper {
-        display: none;
+    /*
+       DESKTOP NAVBAR:
+       completamente desligada no telemóvel.
+    */
+
+    .main-navbar {
+        display: none !important;
+        visibility: hidden !important;
     }
 
-    .mobile-navbar-wrapper {
-        display: block;
+
+    /*
+       MOBILE NAVBAR:
+       é a única navbar que pode aparecer.
+    */
+
+    .mobile-navbar {
+        display: flex !important;
+        visibility: visible !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SAFETY — DESKTOP
+   ========================================================= */
+
+/*
+   Se o ecrã tiver mais de 700px, forçamos novamente
+   a navbar mobile a desaparecer.
+*/
+
+@media (min-width: 701px) {
+
+    .mobile-navbar {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    .main-navbar {
+        display: flex !important;
+        visibility: visible !important;
     }
 }
