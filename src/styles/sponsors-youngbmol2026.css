@@ -219,6 +219,20 @@
     max-height: 135px;
 }
 
+.sponsor-logo--navigator {
+    max-width: 90%;
+    max-height: 175px;
+}
+
+.sponsor-logo--tetley {
+    max-width: 90%;
+    max-height: 175px;
+}
+
+.sponsor-logo--giotto {
+    max-width: 90%;
+    max-height: 175px;
+}
 /* TABLET */
 
 @media (max-width: 980px) {

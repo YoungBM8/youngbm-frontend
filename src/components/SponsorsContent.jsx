@@ -10,6 +10,9 @@ import nebLogo from "../assets/neb.png";
 import spghLogo from "../assets/spgh.png";
 import celeiroLogo from "../assets/celeiro.png";
 import lidelLogo from "../assets/lidel.png";
+import navigator from "../assets/Navigator.png";
+import tetley from "../assets/Tetley.png";
+import giotto from "../assets/Giotto.png";
 
 const sponsors = [
     {
@@ -61,6 +64,21 @@ const sponsors = [
         name: "Lidel",
         logo: lidelLogo,
         className: "sponsor-logo--lidel",
+    },
+    {
+        name: "The Navigator Company",
+        logo: navigator,
+        className: "sponsor-logo--navigator",
+    },
+    {
+        name: "Tetley",
+        logo: tetley,
+        className: "sponsor-logo--tetley",
+    },
+    {
+        name: "Giotto",
+        logo: giotto,
+        className: "sponsor-logo--giotto",
     },
 ];
 

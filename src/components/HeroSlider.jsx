@@ -15,8 +15,8 @@ const slides = [
         image: bmolLogo,
         imageClass: "bmol-image",
         lines: [
-            "SECOND CALL FOR APPLICATIONS:",
-            "MAY 4TH - 24TH",
+            "Deadline For Nationals:",
+            "September 30th",
             "DON'T MISS YOUR CHANCE TO APPLY!"
         ]
     },
