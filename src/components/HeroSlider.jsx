@@ -28,8 +28,8 @@ const slides = [
         imageClass: "seminar-image",
         lines: [
             "Apply now!",
-            "On the 6th June 2026",
-            "The 1st Young Biologists Matter Online Seminar!"
+            "On the 5th September 2026",
+            "The 2nd Young Biologists Matter Online Seminar!"
         ]
     }
 ];

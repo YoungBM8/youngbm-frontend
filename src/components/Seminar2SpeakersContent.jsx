@@ -1,46 +1,15 @@
-import miguel from "../assets/miguel.jpg";
-import andreas from "../assets/andreas.jpg";
-import rocio from "../assets/rocio.jpg";
-import igem from "../assets/igem.png";
+import maria from "../assets/Maria.jpg";
 import neuroholics from "../assets/neuroholics.png";
 
 import "../styles/seminar-speakers.css";
 
 const speakers = [
     {
-        name: "Miguel López Molina",
-        image: miguel,
+        name: "Maria Arsenia Adeline Maniori",
+        image: maria,
         type: "person",
         description:
-            "I graduated in Biochemistry from the Autonomous University of Madrid, where I am currently pursuing a Diploma in Social Communication, Science Communication, and Scientific Advising. My professional goal is to act as a bridge between research institutes and society, helping to make scientific knowledge more accessible while promoting scientific literacy as a universal right."
-    },
-    {
-        name: "Andreas Andreou",
-        image: andreas,
-        type: "person",
-        description:
-            "Synthetic biologist and biotech entrepreneur working at the intersection of SynBio, AI-driven drug discovery, and translational innovation. Co-founder of Prozymi Biolabs and contributor to CellCodex, focused on building technologies that move beyond academia into real-world impact."
-    },
-    {
-        name: "Rocío Vázquez Martínez",
-        image: rocio,
-        type: "person",
-        description:
-            "I am a first-year PhD researcher at the University of Zaragoza and the Institute of Nanoscience and Materials of Aragón, working on a novel breast cancer therapy based on magnetic hyperthermia. My research focuses on targeting iron oxide nanoparticles to cancer cell mitochondria and inducing localized heating through alternating magnetic fields."
-    },
-    {
-        name: "iGEM Thessaloniki",
-        image: igem,
-        type: "logo",
-        description:
-            "iGEM Thessaloniki is an interdisciplinary student team from Aristotle University of Thessaloniki. Since 2017, the team has developed projects addressing real-world challenges while promoting scientific communication, sustainability and innovation through synthetic biology."
-    },
-    {
-        name: "Neuroholics",
-        image: neuroholics,
-        type: "logo",
-        description:
-            "Neuroholics is a non-profit organization dedicated to increasing public awareness of neuroscience through educational activities, workshops and science communication initiatives that make brain research accessible to everyone."
+            "I graduated in Human Biology (Genetics) from the University of Nicosia in Cyprus. Then I obtained my Masters degree in Cancer Biology from the European University Cyprus. Currently, I hold the position of the LSO at the Cyprus Institute of Neurobiology and Genetics at the Bioinformatics Department. Currently I am part of a HORIZON program that aims to understand the connection between Epstein Barr Virus and autoimmune neurodegenerative diseases like Multiple Sclerosis. Alongside my research, I dive into STEAM education especially in Biology through seminars and lectures to young people and especially girls in an effort to reinforce girls in STEM occupations."
     }
 ];
 
@@ -61,9 +30,8 @@ export default function SeminarSpeakersContent() {
 
                     <p>
                         We are excited to introduce all the speakers for our
-                        first online seminar — a group of inspiring young
-                        scientists and science communicators, each bringing
-                        a unique perspective on building a career in science.
+                        second online seminar — bringing an unique point of view
+                        on the topic of AI in research.
                     </p>
 
                 </div>

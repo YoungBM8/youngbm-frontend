@@ -3,7 +3,7 @@ import seminarRight from "../assets/seminar-right.png";
 
 import "../styles/seminar-apply-here.css";
 
-const SEMINAR_APPLICATION_URL = "#";
+const SEMINAR_APPLICATION_URL = "https://forms.gle/kpzxz8VuRYPhLoRX7";
 
 export default function SeminarApplyHereContent() {
     return (
@@ -24,12 +24,13 @@ export default function SeminarApplyHereContent() {
                         Young BM Seminar
                     </span>
 
-                    <h1>Industry vs Academia</h1>
+                    <h1>AI in Science:</h1>
+                    <h1>Tools, Methods and Ethics</h1>
 
                     <p className="seminar-hero-subtitle">
-                        1st edition of Young Biologists Matter Seminar
+                        2nd edition of Young Biologists Matter Seminar
                         <br />
-                        on the 6th of June 2026
+                        on the 5th of September 2026
                     </p>
 
                     <a
@@ -61,11 +62,13 @@ export default function SeminarApplyHereContent() {
                 </div>
 
                 <p className="seminar-about-text">
-                    We are excited to launch the first Young Biologists Matter
-                    Online Seminar. This event kicks off a seminar series running
-                    from June 2026 until the Young BMol 2026 Congress, taking
-                    place in Lisbon, Portugal, from the 16th to the 21st of
-                    November 2026.
+                    Artificial intelligence is transforming research by helping scientists
+                    analyse data, explore knowledge, generate hypotheses, and accelerate
+                    scientific discovery. The “AI in research” seminar is a small hands-on
+                    workshop-like seminar that will introduce to you several AI systems
+                    that can be used in research, will teach you examples of correct prompting,
+                    will help you understand how AI detector programs work and will dive into
+                    ethical considerations on the use of AI in research.
                 </p>
 
             </section>
@@ -93,7 +96,7 @@ export default function SeminarApplyHereContent() {
 
                         <ul>
                             <li>Online event</li>
-                            <li>6th June 2026</li>
+                            <li>5th September 2026</li>
                             <li>9:00 until 12:30 UTC+1</li>
                         </ul>
 
@@ -103,7 +106,7 @@ export default function SeminarApplyHereContent() {
 
                 <p className="seminar-information-message">
                     We would love for you to join us for this insightful
-                    conversation about career paths in science. Stay tuned
+                    conversation about AI in research. Stay tuned
                     for speaker announcements!
                 </p>
 
