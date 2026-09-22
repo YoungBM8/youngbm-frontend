@@ -59,7 +59,7 @@ export default function ApplyHereBlueMenu() {
 
     return (
         <section className="applyhere-blue-section">
-            <h2>About YOUNG BMol 2026</h2>
+            <h2>About YOUNG BMEco 2027</h2>
 
             <div className="applyhere-icons-grid">
                 {items.map((item) => {
