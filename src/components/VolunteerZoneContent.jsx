@@ -25,12 +25,12 @@ export default function VolunteerZoneContent() {
                 </p>
 
                 <a
-                    href="https://forms.gle/4548qu6xzYf4RjDn6"
+                    href=""
                     target="_blank"
                     rel="noopener noreferrer"
                     className="volunteer-button"
                 >
-                    Volunteer form
+                    Volunteer form Soon...
                 </a>
             </section>
 

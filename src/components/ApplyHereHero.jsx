@@ -1,6 +1,6 @@
 import "../styles/applyhere-youngbmol2026.css";
 
-import bmolLogo from "../assets/bmol-logo.png";
+import bmolLogo from "../assets/2027Tirana.png";
 import arrow from "../assets/arrow.png";
 
 export default function ApplyHereHero() {
@@ -10,7 +10,7 @@ export default function ApplyHereHero() {
             <div className="applyhere-hero-inner">
 
                 <a
-                    href="https://forms.gle/Pin6F5uzY8u4CGXW9"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSefi9psrloGLxER9lP_KJWOxAvUokhZLwvlRfZL6zzOR_dExA/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="applyhere-apply-button"
@@ -26,15 +26,14 @@ export default function ApplyHereHero() {
 
                 <img
                     src={bmolLogo}
-                    alt="Young BMol 2026 Lisbon"
+                    alt="Young BMEco 2027 Tirana"
                     className="applyhere-bmol-logo"
                 />
 
             </div>
 
             <p className="applyhere-date-text">
-                Young BMol 2026 will take place in Lisbon, Portugal from{" "}
-                <strong>16th-21st of November 2026.</strong>
+                Young BMEco 2027 will take part from <strong>3-7th of March 2027</strong> in Tirana, Albania.
             </p>
 
         </section>

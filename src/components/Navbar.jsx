@@ -30,7 +30,7 @@ export default function Navbar() {
 
                     <li className="dropdown">
                         <span className="dropdown-title">
-                            Young BMol 2026
+                            Young BMEco 2027
                         </span>
 
                         <ul className="dropdown-menu">
@@ -206,7 +206,7 @@ export default function Navbar() {
                                     toggleDropdown("bmol")
                                 }
                             >
-                                <span>Young BMol 2026</span>
+                                <span>Young BMEco 2027</span>
                                 <span className="mobile-arrow">
                                     {openDropdown === "bmol"
                                         ? "−"

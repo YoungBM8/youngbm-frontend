@@ -13,7 +13,7 @@ export default function ApplicationProcessContent() {
                         <h1>Application</h1>
 
                         <a
-                            href="https://forms.gle/Pin6F5uzY8u4CGXW9"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSefi9psrloGLxER9lP_KJWOxAvUokhZLwvlRfZL6zzOR_dExA/viewform"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="application-main-button"
@@ -40,13 +40,13 @@ export default function ApplicationProcessContent() {
                     </div>
 
                 </div>
-
+                {/*
                 <p>
                     Application for locals and those who don’t need accommodation are open
                     from the <strong>25th of May</strong>. It includes participation and welcomes
                     kit for the whole congress.
                 </p>
-
+                */}
                 <h3>How to apply?</h3>
 
                 <p>
@@ -76,6 +76,8 @@ export default function ApplicationProcessContent() {
                     <br />
                     <strong>youngbmnetwork@gmail.com</strong>
                 </p>
+
+                <p style={{ color: "#ffffff" }}>.</p>
 
             </section>
 

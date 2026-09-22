@@ -7,30 +7,15 @@ export default function ApplyHereCard() {
                 <h2>
                     WELCOME TO
                     <br />
-                    LISBON
+                    TIRANA
                 </h2>
 
                 <p>
-                    Lisbon is a city on the Atlantic coast of Portugal, and the
-                    capital of the country. With a population of around 550,000
-                    inhabitants within its administrative limits, and over 3 million
-                    in its metropolitan area, it is Portugal&apos;s largest city and
-                    its main hub for commerce, tourism, and international trade.
-                    Lisbon lies at the mouth of the Tagus River and is situated on
-                    the northern bank of the river&apos;s estuary, close to the
-                    Atlantic Ocean.
+                    Tirana is the capital and largest city of Albania, located in the center of the country and surrounded by mountains and hills. Founded in 1614 by Ottoman nobleman Sylejman Pasha Bargjini, it became Albania&apos;s capital in 1920 after the country gained independence in 1912.
                 </p>
 
                 <p>
-                    The city is home to the University of Lisbon, the NOVA University
-                    of Lisbon, the University of Lisbon School of Law, the National
-                    Museum of Ancient Art, the National Theatre of São Carlos, the
-                    Belém Cultural Centre, and the Lisbon Oceanarium, one of the
-                    largest aquariums in Europe. Among Lisbon&apos;s most notable
-                    historical landmarks are the Belém Tower, the Jerónimos Monastery,
-                    the São Jorge Castle, the Commerce Square, the Santa Justa Lift,
-                    and the Lisbon Cathedral, one of the oldest and most important
-                    religious buildings in the city.
+                    The city is Albania&apos;s most important economic, financial, political, and trade center, and is among the wettest and sunniest cities in Europe with 2,544 hours of sun per year. Tirana was named the European Youth Capital for 2022 and hosted the EU-Western Balkans summit in December 2022.
                 </p>
             </div>
         </section>
