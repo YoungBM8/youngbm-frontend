@@ -29,7 +29,7 @@ const slides = [
         lines: [
             "Deadline For Nationals:",
             "September 30th",
-            "DON'T MISS YOUR CHANCE TO APPLY!"
+            <>DON'T MISS YOUR CHANCE TO <a href="https://forms.gle/uFXrTbydggmjBN1P7">APPLY</a>!</>
         ]
     },
 
