@@ -6,17 +6,30 @@ import "../styles/slider.css";
 import heroLisbon from "../assets/hero-lisbon.png";
 import heroTirana from "../assets/hero-tirana.png";
 
-import bmolLogo from "../assets/2027Tirana.png";
+import bmolLogoTirana from "../assets/2027Tirana.png";
+import bmolLogoLisbon from "../assets/bmol-logo.png";
 import seminarIllustration from "../assets/seminar-illustration.png";
 
 const slides = [
     {
         title: "Young BMEco 2027 TIRANA",
         background: heroTirana,
-        image: bmolLogo,
+        image: bmolLogoTirana,
         imageClass: "bmol-image",
         lines: [
             <>DON'T MISS YOUR CHANCE TO <a href="https://docs.google.com/forms/d/e/1FAIpQLSefi9psrloGLxER9lP_KJWOxAvUokhZLwvlRfZL6zzOR_dExA/viewform">APPLY</a>!</>
+        ]
+    },
+
+    {
+        title: "YOUNG BMol 2026 LISBON",
+        background: heroLisbon,
+        image: bmolLogoLisbon,
+        imageClass: "bmol-image",
+        lines: [
+            "Deadline For Nationals:",
+            "September 30th",
+            "DON'T MISS YOUR CHANCE TO APPLY!"
         ]
     },
 
