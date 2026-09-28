@@ -30,7 +30,7 @@ export default function VolunteerZoneContent() {
                     rel="noopener noreferrer"
                     className="volunteer-button"
                 >
-                    Volunteer form Soon...
+                    Volunteer form soon...
                 </a>
             </section>
 

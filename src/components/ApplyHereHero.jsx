@@ -1,7 +1,7 @@
 import "../styles/applyhere-youngbmol2026.css";
 
 import bmolLogo from "../assets/2027Tirana.png";
-import arrow from "../assets/arrow.png";
+import arrow from "../assets/arrow-tirana.png";
 
 export default function ApplyHereHero() {
     return (

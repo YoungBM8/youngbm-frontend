@@ -27,7 +27,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#1239d4;
+    background:#b73239;
     color:white;
     text-decoration:none;
     border:none;
@@ -60,7 +60,7 @@
 
 .applyhere-date-text{
     margin-top:14px;
-    color:#1239d4;
+    color:#300e0f;
     font-size:12px;
     font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
 }
@@ -69,7 +69,7 @@
 
 .applyhere-blue-section{
     width:100%;
-    background:#123b8d;
+    background:#b73239;
     padding:28px 0 34px;
 }
 
@@ -150,7 +150,7 @@ a.applyhere-icon-item:hover .applyhere-menu-icon{
     max-height:430px;
     overflow:hidden;
     background:rgba(255,255,255,.80);
-    border:2px solid #1239d4;
+    border:2px solid #b73239;
     border-radius:5px;
     padding:24px 24px;
     text-align:center;
@@ -159,7 +159,7 @@ a.applyhere-icon-item:hover .applyhere-menu-icon{
 
 .applyhere-lisbon-card h2{
     margin:0 0 20px;
-    color:#123b8d;
+    color:#300e0f;
     font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:34px;
     font-weight:400;
@@ -169,7 +169,7 @@ a.applyhere-icon-item:hover .applyhere-menu-icon{
 
 .applyhere-lisbon-card p{
     margin:0 0 16px;
-    color:#123b8d;
+    color:#300e0f;
     font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:11.4px;
     line-height:1.55;
