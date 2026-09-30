@@ -233,6 +233,11 @@
     max-width: 90%;
     max-height: 175px;
 }
+
+.sponsor-logo--amorim {
+    max-width: 90%;
+    max-height: 175px;
+}
 /* TABLET */
 
 @media (max-width: 980px) {

@@ -13,6 +13,7 @@ import lidelLogo from "../assets/lidel.png";
 import navigator from "../assets/Navigator.png";
 import tetley from "../assets/Tetley.png";
 import giotto from "../assets/Giotto.png";
+import amorimLogo from "../assets/amorim-cork.png";
 
 const sponsors = [
     {
@@ -79,6 +80,11 @@ const sponsors = [
         name: "Giotto",
         logo: giotto,
         className: "sponsor-logo--giotto",
+    },
+    {
+        name: "Amorim Cork",
+        logo: amorimLogo,
+        className: "sponsor-logo--amorim",
     },
 ];
 
