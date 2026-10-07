@@ -46,7 +46,7 @@ function TypeTag({ type }) {
     return (
         <span className="home-type-tag home-type-tag--conference">
             <Users size={14} strokeWidth={2.2} aria-hidden="true" />
-            Conference · In person
+            Congress · In person
         </span>
     );
 }
@@ -102,18 +102,18 @@ export default function HomeEvents() {
                     </h1>
 
                     <p className="home-intro-text">
-                        International conferences hosted in a different city
+                        International congresses hosted in a different city
                         every edition, and online seminars you can join from
                         anywhere.
                     </p>
 
                     <div className="home-next-grid">
-                        <a href="#conferences" className="home-next-card">
+                        <a href="#congresses" className="home-next-card">
                             <span className="home-next-icon">
                                 <Users size={22} strokeWidth={2} aria-hidden="true" />
                             </span>
                             <span className="home-next-text">
-                                <span className="home-next-label">Next conference</span>
+                                <span className="home-next-label">Next congress</span>
                                 <strong>Young BMEco 2027</strong>
                                 <span>Tirana, Albania · 3–7 March 2027</span>
                             </span>
@@ -135,14 +135,14 @@ export default function HomeEvents() {
                 </div>
             </section>
 
-            {/* ================= CONFERENCES ================= */}
+            {/* ================= CONGRESSES ================= */}
 
-            <section className="home-section" id="conferences">
+            <section className="home-section" id="congresses">
                 <div className="home-container">
 
                     <header className="home-section-header">
                         <TypeTag type="conference" />
-                        <h2>Conferences</h2>
+                        <h2>Congresses</h2>
                         <p>
                             Multi-day congresses where young scientists meet in
                             person: lectures, presentations, workshops and a
@@ -211,7 +211,7 @@ export default function HomeEvents() {
 
                     {/* Previous: Young BMol 2026 */}
 
-                    <h4 className="home-subheading">Previous conference</h4>
+                    <h4 className="home-subheading">Previous congress</h4>
 
                     <article className="home-event home-event--compact">
                         <EventPhoto

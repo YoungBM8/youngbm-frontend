@@ -305,3 +305,208 @@
         font-size: 14px;
     }
 }
+/* =========================================================
+   SPONSOR TIERS (Golden / Silver / Bronze)
+   ========================================================= */
+
+.sponsors-tier {
+    --tier-color: #c9a227;
+    --tier-tint: rgba(201, 162, 39, 0.12);
+    --card-width: 340px;
+
+    width: min(1180px, 100%);
+    margin: 0 auto 64px;
+}
+
+.sponsors-tier:last-child {
+    margin-bottom: 0;
+}
+
+.sponsors-tier--silver {
+    --tier-color: #8e9aa3;
+    --tier-tint: rgba(142, 154, 163, 0.14);
+    --card-width: 265px;
+}
+
+.sponsors-tier--bronze {
+    --tier-color: #b0723a;
+    --tier-tint: rgba(176, 114, 58, 0.12);
+    --card-width: 180px;
+}
+
+.sponsors-tier-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    margin-bottom: 30px;
+}
+
+.sponsors-tier-header::before,
+.sponsors-tier-header::after {
+    content: "";
+    flex: 1;
+    max-width: 260px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--tier-color));
+}
+
+.sponsors-tier-header::after {
+    background: linear-gradient(90deg, var(--tier-color), transparent);
+}
+
+.sponsors-tier-medal {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--tier-color);
+    box-shadow: 0 0 0 5px var(--tier-tint);
+}
+
+.sponsors-tier-header h2 {
+    margin: 0;
+
+    font-family:
+        "Plus Jakarta Sans",
+        "Avenir LT Std",
+        "Avenir",
+        "Helvetica Neue",
+        sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+
+    color: #174f49;
+}
+
+/* Flex instead of grid so incomplete rows stay centred */
+
+.sponsors-tier .sponsors-grid {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+}
+
+.sponsors-tier .sponsor-card {
+    width: var(--card-width);
+    border-top: 4px solid var(--tier-color);
+}
+
+/* Silver: smaller cards */
+
+.sponsors-tier--silver .sponsor-card {
+    min-height: 235px;
+    padding: 24px 20px 18px;
+}
+
+.sponsors-tier--silver .sponsor-logo-container {
+    height: 145px;
+}
+
+.sponsors-tier--silver .sponsor-logo {
+    max-height: 120px;
+}
+
+/* Bronze: compact cards */
+
+.sponsors-tier--bronze .sponsors-grid {
+    gap: 16px;
+}
+
+.sponsors-tier--bronze .sponsor-card {
+    min-height: 180px;
+    padding: 18px 14px 14px;
+}
+
+.sponsors-tier--bronze .sponsor-logo-container {
+    height: 100px;
+}
+
+.sponsors-tier--bronze .sponsor-logo {
+    max-width: 92%;
+    max-height: 88px;
+}
+
+.sponsors-tier--bronze .sponsor-card h2 {
+    font-size: 13px;
+}
+
+/* Sponsor without a logo yet */
+
+.sponsor-logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 85%;
+    height: 75%;
+
+    border-radius: 12px;
+    background: var(--tier-tint, #eef7f5);
+
+    font-family:
+        "Plus Jakarta Sans",
+        "Avenir LT Std",
+        "Avenir",
+        "Helvetica Neue",
+        sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+
+    color: #174f49;
+}
+
+.sponsors-tier--bronze .sponsor-logo-placeholder {
+    font-size: 16px;
+}
+
+@media (max-width: 620px) {
+    .sponsors-tier {
+        margin-bottom: 48px;
+    }
+
+    .sponsors-tier .sponsor-card {
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .sponsors-tier--silver .sponsor-card,
+    .sponsors-tier--bronze .sponsor-card {
+        width: calc(50% - 8px);
+        min-height: 170px;
+        padding: 16px 12px 12px;
+    }
+
+    .sponsors-tier--silver .sponsors-grid,
+    .sponsors-tier--bronze .sponsors-grid {
+        gap: 16px;
+    }
+
+    .sponsors-tier--silver .sponsor-logo-container,
+    .sponsors-tier--bronze .sponsor-logo-container {
+        height: 100px;
+    }
+
+    .sponsors-tier--silver .sponsor-logo,
+    .sponsors-tier--bronze .sponsor-logo {
+        max-height: 85px;
+    }
+
+    .sponsors-tier .sponsor-card h2 {
+        font-size: 12px;
+    }
+
+    .sponsor-logo-placeholder {
+        font-size: 16px;
+    }
+
+    .sponsors-tier-header h2 {
+        font-size: 20px;
+    }
+}

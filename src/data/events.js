@@ -3,7 +3,7 @@
     Times are local to the host city.
 */
 
-// ---------------- CONFERENCES (in person) ----------------
+// ---------------- CONGRESSES (in person) ----------------
 
 // Young BMEco 2027 – Tirana, Albania (3–7 March 2027, CET = UTC+1)
 export const YOUNG_BMECO_2027_START = new Date("2027-03-03T00:00:00+01:00");

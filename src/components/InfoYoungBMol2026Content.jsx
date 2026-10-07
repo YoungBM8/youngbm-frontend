@@ -42,7 +42,7 @@ export default function InfoYoungBMol2026Content() {
                     </h2>
 
                     <p>
-                        10th edition of Young Biologists Matter Bio conference, which will take place in Lisbon, Portugal from 16th to 21st November 2026. Don&apos;t miss this opportunity to connect with young scientists from around the world, share ideas, and experience an unforgettable congress.
+                        10th edition of Young Biologists Matter Bio congress, which will take place in Lisbon, Portugal from 16th to 21st November 2026. Don&apos;t miss this opportunity to connect with young scientists from around the world, share ideas, and experience an unforgettable congress.
                     </p>
 
                     <Link

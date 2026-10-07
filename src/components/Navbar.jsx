@@ -35,7 +35,7 @@ export default function Navbar() {
 
                         <ul className="dropdown-menu">
                             <li className="dropdown-type" aria-hidden="true">
-                                Conference · Tirana, Albania
+                                Congress · Tirana, Albania
                             </li>
 
                             <li>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
                         <ul className="dropdown-menu">
                             <li className="dropdown-type" aria-hidden="true">
-                                Conference · Lisbon, Portugal
+                                Congress · Lisbon, Portugal
                             </li>
 
                             <li>
@@ -250,7 +250,7 @@ export default function Navbar() {
                                 <div className="mobile-submenu">
 
                                     <span className="mobile-submenu-type">
-                                        Conference · Tirana, Albania
+                                        Congress · Tirana, Albania
                                     </span>
 
                                     <Link
@@ -308,7 +308,7 @@ export default function Navbar() {
                                 <div className="mobile-submenu">
 
                                     <span className="mobile-submenu-type">
-                                        Conference · Lisbon, Portugal
+                                        Congress · Lisbon, Portugal
                                     </span>
 
                                     <Link
