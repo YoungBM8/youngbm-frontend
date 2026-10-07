@@ -1,6 +1,5 @@
 import "../styles/board2026.css";
 
-import andreFreitas from "../assets/andre-freitas.jpg";
 import anaRaquel from "../assets/ana-raquel-augusto.jpg";
 import aleksandra from "../assets/aleksandra-stjepanovic.jpg";
 import errika from "../assets/errika-sylai.jpg";
@@ -65,14 +64,6 @@ const members = [
         text: "A second-year PhD student at the University of Belgrade, Faculty of Biology, specialising in molecular microbiology and biotechnology. I joined Young BM in 2025 with a passion for helping young students and contributing to a supportive scientific community.",
         email: "mandjelkovic910@gmail.com",
         linkedin: "http://www.linkedin.com/in/marija-anđelković2000"
-    },
-    {
-        image: andreFreitas,
-        role: "IT and Partnership Assistant",
-        name: "André Freitas",
-        text: "I'm currently in the 3rd year of my Bachelor's in Data Science at ISCTE, in Lisbon. I joined Young BM because I wanted to experience what it is like to be part of an international organization.",
-        email: "andre.manuel.ramos.freitas@gmail.com",
-        linkedin: "https://www.linkedin.com/in/andr%C3%A9-freitas-13955737a/"
     }
 ];
 

@@ -2,6 +2,7 @@ import "../styles/sponsors-youngbmol2026.css";
 
 import appliedMicrobiologyLogo from "../assets/applied-microbiology-international.png";
 import fculLogo from "../assets/fcul.png";
+import fculBiologiaLogo from "../assets/fcul-biologia.jpg";
 import carrisLogo from "../assets/carris.png";
 import pasteisBelemLogo from "../assets/pasteis-de-belem.png";
 import idlLogo from "../assets/idl.png";
@@ -25,6 +26,11 @@ const sponsors = [
         name: "Faculdade de Ciências da Universidade de Lisboa",
         logo: fculLogo,
         className: "sponsor-logo--fcul",
+    },
+    {
+        name: "Ciências ULisboa – Biologia",
+        logo: fculBiologiaLogo,
+        className: "sponsor-logo--fcul-biologia",
     },
     {
         name: "Carris",
@@ -88,44 +94,53 @@ const sponsors = [
     },
 ];
 
-export default function SponsorsContent() {
+export default function SponsorsContent({
+    eventName = "Young BMol 2026",
+    sponsorList = sponsors,
+    emptyMessage = "Sponsors will be announced soon.",
+}) {
+    const hasSponsors = sponsorList.length > 0;
+
     return (
         <main className="sponsors-main">
             <section className="sponsors-intro">
                 <span className="sponsors-eyebrow">
-                    Young BMol 2026
+                    {eventName}
                 </span>
 
                 <h1>Our Sponsors &amp; Partners</h1>
 
                 <p>
-                    We are grateful to all the organisations and companies
-                    supporting Young BMol 2026.
+                    {hasSponsors
+                        ? `We are grateful to all the organisations and companies supporting ${eventName}.`
+                        : emptyMessage}
                 </p>
             </section>
 
-            <section
-                className="sponsors-grid"
-                aria-label="Young BMol 2026 sponsors and partners"
-            >
-                {sponsors.map((sponsor) => (
-                    <article
-                        className="sponsor-card"
-                        key={sponsor.name}
-                    >
-                        <div className="sponsor-logo-container">
-                            <img
-                                src={sponsor.logo}
-                                alt={`${sponsor.name} logo`}
-                                className={`sponsor-logo ${sponsor.className}`}
-                                loading="lazy"
-                            />
-                        </div>
+            {hasSponsors && (
+                <section
+                    className="sponsors-grid"
+                    aria-label={`${eventName} sponsors and partners`}
+                >
+                    {sponsorList.map((sponsor) => (
+                        <article
+                            className="sponsor-card"
+                            key={sponsor.name}
+                        >
+                            <div className="sponsor-logo-container">
+                                <img
+                                    src={sponsor.logo}
+                                    alt={`${sponsor.name} logo`}
+                                    className={`sponsor-logo ${sponsor.className}`}
+                                    loading="lazy"
+                                />
+                            </div>
 
-                        <h2>{sponsor.name}</h2>
-                    </article>
-                ))}
-            </section>
+                            <h2>{sponsor.name}</h2>
+                        </article>
+                    ))}
+                </section>
+            )}
         </main>
     );
 }

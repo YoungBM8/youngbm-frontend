@@ -34,6 +34,10 @@ export default function Navbar() {
                         </span>
 
                         <ul className="dropdown-menu">
+                            <li className="dropdown-type" aria-hidden="true">
+                                Conference · Tirana, Albania
+                            </li>
+
                             <li>
                                 <Link to="/young-bmol/apply-here">
                                     Apply Here
@@ -62,10 +66,38 @@ export default function Navbar() {
 
                     <li className="dropdown">
                         <span className="dropdown-title">
-                            Young BM Seminar
+                            Young BMol 2026
+                        </span>
+
+                        <ul className="dropdown-menu">
+                            <li className="dropdown-type" aria-hidden="true">
+                                Conference · Lisbon, Portugal
+                            </li>
+
+                            <li>
+                                <Link to="/young-bmol-2026/info">
+                                    Info Page
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/young-bmol-2026/sponsors">
+                                    Sponsors
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li className="dropdown">
+                        <span className="dropdown-title">
+                            Online Seminar
                         </span>
 
                         <ul className="dropdown-menu seminar-dropdown-menu">
+                            <li className="dropdown-type" aria-hidden="true">
+                                Online seminar · 24 Oct 2026
+                            </li>
+
                             <li>
                                 <Link to="/seminar/apply-here">
                                     Apply Here
@@ -74,7 +106,7 @@ export default function Navbar() {
 
                             <li>
                                 <Link to="/seminar/speakers">
-                                    Speakers
+                                    Speaker
                                 </Link>
                             </li>
                         </ul>
@@ -197,7 +229,7 @@ export default function Navbar() {
                         </Link>
 
 
-                        {/* YOUNG BMOL */}
+                        {/* YOUNG BMECO 2027 */}
 
                         <div className="mobile-dropdown">
 
@@ -216,6 +248,10 @@ export default function Navbar() {
 
                             {openDropdown === "bmol" && (
                                 <div className="mobile-submenu">
+
+                                    <span className="mobile-submenu-type">
+                                        Conference · Tirana, Albania
+                                    </span>
 
                                     <Link
                                         to="/young-bmol/apply-here"
@@ -251,6 +287,50 @@ export default function Navbar() {
                         </div>
 
 
+                        {/* YOUNG BMOL 2026 */}
+
+                        <div className="mobile-dropdown">
+
+                            <button
+                                onClick={() =>
+                                    toggleDropdown("bmol2026")
+                                }
+                            >
+                                <span>Young BMol 2026</span>
+                                <span className="mobile-arrow">
+                                    {openDropdown === "bmol2026"
+                                        ? "−"
+                                        : "+"}
+                                </span>
+                            </button>
+
+                            {openDropdown === "bmol2026" && (
+                                <div className="mobile-submenu">
+
+                                    <span className="mobile-submenu-type">
+                                        Conference · Lisbon, Portugal
+                                    </span>
+
+                                    <Link
+                                        to="/young-bmol-2026/info"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Info Page
+                                    </Link>
+
+                                    <Link
+                                        to="/young-bmol-2026/sponsors"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Sponsors
+                                    </Link>
+
+                                </div>
+                            )}
+
+                        </div>
+
+
                         {/* SEMINAR */}
 
                         <div className="mobile-dropdown">
@@ -260,7 +340,7 @@ export default function Navbar() {
                                     toggleDropdown("seminar")
                                 }
                             >
-                                <span>Young BM Seminar</span>
+                                <span>Online Seminar</span>
                                 <span className="mobile-arrow">
                                     {openDropdown === "seminar"
                                         ? "−"
@@ -270,6 +350,10 @@ export default function Navbar() {
 
                             {openDropdown === "seminar" && (
                                 <div className="mobile-submenu">
+
+                                    <span className="mobile-submenu-type">
+                                        Online seminar · 24 Oct 2026
+                                    </span>
 
                                     <Link
                                         to="/seminar/apply-here"
@@ -282,7 +366,7 @@ export default function Navbar() {
                                         to="/seminar/speakers"
                                         onClick={closeMobileMenu}
                                     >
-                                        Speakers
+                                        Speaker
                                     </Link>
 
                                 </div>

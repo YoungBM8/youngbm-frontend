@@ -1,22 +1,15 @@
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import HomeEvents from "../components/HomeEvents";
 import Footer from "../components/Footer";
+import InfoYoungBMol2026Content from "../components/InfoYoungBMol2026Content";
 
-import "../styles/home.css";
-
-export default function Home() {
+export default function InfoYoungBMol2026() {
     return (
         <>
-
             <Header />
-
             <Navbar />
-
-            <HomeEvents />
-
+            <InfoYoungBMol2026Content />
             <Footer />
-
         </>
     );
 }

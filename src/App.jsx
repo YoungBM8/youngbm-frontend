@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import ApplyHereYoungBMol2026 from "./pages/ApplyHereYoungBMol2026";
 import ApplicationProcessYoungBMol2026 from "./pages/ApplicationProcessYoungBMol2026";
 import VolunteerZoneYoungBMol2026 from "./pages/VolunteerZoneYoungBMol2026";
+import SponsorsYoungBMEco2027 from "./pages/SponsorsYoungBMEco2027";
+
+import InfoYoungBMol2026 from "./pages/InfoYoungBMol2026";
 import SponsorsYoungBMol2026 from "./pages/SponsorsYoungBMol2026";
 
 import AboutOurCongress from "./pages/AboutOurCongress";
@@ -48,7 +51,7 @@ function App() {
 
                 <Route
                     path="/bmol/sponsors"
-                    element={<SponsorsYoungBMol2026 />}
+                    element={<SponsorsYoungBMEco2027 />}
                 />
 
                 <Route
@@ -68,8 +71,20 @@ function App() {
 
                 <Route
                     path="/young-bmol/sponsors"
+                    element={<SponsorsYoungBMEco2027 />}
+                />
+
+                {/* Young BMol 2026 (Lisbon) – past event */}
+                <Route
+                    path="/young-bmol-2026/info"
+                    element={<InfoYoungBMol2026 />}
+                />
+
+                <Route
+                    path="/young-bmol-2026/sponsors"
                     element={<SponsorsYoungBMol2026 />}
                 />
+
                 <Route
                     path="/seminar/apply-here"
                     element={<SeminarApplyHere />}

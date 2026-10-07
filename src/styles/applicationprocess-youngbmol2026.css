@@ -20,7 +20,7 @@
     width:560px;
     max-width:90%;
     text-align:center;
-    color:#123b8d;
+    color:#03443d;
     z-index:2;
 }
 
@@ -44,12 +44,12 @@
     font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:42px;
     font-weight:400;
-    color:#b73239;
+    color:#338c82;
 }
 
 .application-main-button,
 .application-small-button{
-    background:#b73239;
+    background:#338c82;
     color:#ffffff;
     text-decoration:none;
     border-radius:22px;
@@ -84,7 +84,7 @@
     font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:13px;
     line-height:1.65;
-    color:#300e0f;
+    color:#03443d;
 }
 
 .application-content h3{
@@ -92,7 +92,7 @@
     font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:13px;
     font-weight:700;
-    color:#300e0f;
+    color:#03443d;
 }
 
 .blue-brush{
@@ -101,7 +101,7 @@
     bottom:0;
     width:100%;
     height:70px;
-    background:#b73239;
+    background:#338c82;
     clip-path:polygon(
         0 45%,
         10% 38%,
