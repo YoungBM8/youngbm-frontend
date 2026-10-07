@@ -1,0 +1,709 @@
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.main-navbar {
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+    background: #338c82;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+.desktop-navbar {
+    width: 100%;
+    height: 62px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+
+.main-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 34px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.main-nav-links > li {
+    position: relative;
+
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   DESKTOP LINKS
+   ========================================================= */
+
+.main-nav-links > li > a,
+.dropdown-title {
+    position: relative;
+
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family:
+        "Avenir Light",
+        "Avenir LT Std",
+        "Avenir Next",
+        Avenir,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+
+    letter-spacing: 0.1px;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.main-nav-links > li > a:hover,
+.dropdown:hover > .dropdown-title {
+    color: #ffffff;
+    opacity: 0.94;
+}
+
+
+/* =========================================================
+   WHITE UNDERLINE
+   ========================================================= */
+
+.main-nav-links > li > a::after,
+.dropdown-title::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffffff;
+
+    border-radius: 999px;
+
+    transform: translateX(-50%);
+
+    transition: width 0.22s ease;
+}
+
+
+.main-nav-links > li:hover > a::after,
+.dropdown:hover > .dropdown-title::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DESKTOP DROPDOWNS
+   ========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    width: max-content;
+    min-width: 225px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    background: #338c82;
+
+    border: none;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform:
+        translateX(-50%)
+        translateY(4px);
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease,
+        visibility 0.18s ease;
+
+    z-index: 2000;
+}
+
+
+/* Hover desktop */
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(6px);
+}
+
+
+/* Invisible bridge */
+
+.dropdown::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: -12px;
+
+    width: calc(100% + 24px);
+    height: 12px;
+}
+
+
+/* =========================================================
+   DROPDOWN ITEMS
+   ========================================================= */
+
+.dropdown-menu li {
+    width: 100%;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+
+.dropdown-menu a {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 16px;
+    box-sizing: border-box;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    text-align: center;
+
+    font-family:
+        "Avenir Light",
+        "Avenir LT Std",
+        "Avenir Next",
+        Avenir,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.18s ease,
+        opacity 0.18s ease;
+}
+
+
+.dropdown-menu a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+
+/* Event type label (Conference / Online seminar) */
+
+.dropdown-menu li.dropdown-type {
+    padding: 12px 16px 10px;
+
+    background: rgba(0, 0, 0, 0.12);
+
+    color: rgba(255, 255, 255, 0.85);
+
+    text-align: center;
+
+    font-family:
+        "Avenir LT Std",
+        "Avenir Next",
+        Avenir,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DROPDOWN WIDTHS
+   ========================================================= */
+
+.about-dropdown-menu {
+    min-width: 260px;
+}
+
+
+.network-dropdown-menu {
+    min-width: 295px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.main-nav-links a:focus-visible,
+.dropdown-title:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.95);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+
+.dropdown-menu a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: -3px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+.mobile-navbar {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE VERSION
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Hide desktop completely */
+    .desktop-navbar {
+        display: none;
+    }
+
+
+    /* Show mobile completely */
+    .mobile-navbar {
+        display: block;
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       TOP BAR
+       ----------------------------------------------------- */
+
+    .mobile-navbar-top {
+        width: 100%;
+        height: 62px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        background: #338c82;
+    }
+
+
+    .mobile-navbar-title {
+        color: #ffffff;
+
+        font-family:
+            "Avenir Light",
+            "Avenir LT Std",
+            "Avenir Next",
+            Avenir,
+            "Helvetica Neue",
+            Arial,
+            sans-serif;
+
+        font-size: 20px;
+        font-weight: 300;
+
+        white-space: nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       HAMBURGER
+       ----------------------------------------------------- */
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 5px;
+
+        padding: 0;
+
+        border: none;
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-menu-button span {
+        display: block;
+
+        width: 30px;
+        height: 2px;
+
+        background: #ffffff;
+
+        border-radius: 999px;
+
+        transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
+    }
+
+
+    /* X animation */
+
+    .mobile-menu-button.active span:nth-child(1) {
+        transform:
+            translateY(7px)
+            rotate(45deg);
+    }
+
+
+    .mobile-menu-button.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .mobile-menu-button.active span:nth-child(3) {
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU
+       ----------------------------------------------------- */
+
+    .mobile-menu {
+        width: 100%;
+
+        background: #338c82;
+
+        box-sizing: border-box;
+
+        padding: 0 0 10px;
+    }
+
+
+    .mobile-menu > a,
+    .mobile-dropdown > button {
+        width: 100%;
+        min-height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 24px;
+        box-sizing: border-box;
+
+        border: none;
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.12);
+
+        background: transparent;
+
+        color: #ffffff;
+
+        text-decoration: none;
+
+        font-family:
+            "Avenir Light",
+            "Avenir LT Std",
+            "Avenir Next",
+            Avenir,
+            "Helvetica Neue",
+            Arial,
+            sans-serif;
+
+        font-size: 18px;
+        font-weight: 300;
+
+        text-align: left;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-menu > a:active,
+    .mobile-dropdown > button:active {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE DROPDOWN
+       ----------------------------------------------------- */
+
+    .mobile-dropdown {
+        width: 100%;
+    }
+
+
+    .mobile-dropdown > button {
+        appearance: none;
+    }
+
+
+    .mobile-arrow {
+        font-size: 22px;
+        font-weight: 300;
+
+        line-height: 1;
+
+        margin-left: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE SUBMENU
+       ----------------------------------------------------- */
+
+    .mobile-submenu {
+        width: 100%;
+
+        background: rgba(0, 0, 0, 0.07);
+    }
+
+
+    .mobile-submenu a {
+        width: 100%;
+        min-height: 48px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 0 24px 0 42px;
+        box-sizing: border-box;
+
+        color: #ffffff;
+
+        text-decoration: none;
+
+        font-family:
+            "Avenir Light",
+            "Avenir LT Std",
+            "Avenir Next",
+            Avenir,
+            "Helvetica Neue",
+            Arial,
+            sans-serif;
+
+        font-size: 16px;
+        font-weight: 300;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .mobile-submenu-type {
+        display: block;
+
+        padding: 12px 24px 8px 42px;
+
+        color: rgba(255, 255, 255, 0.8);
+
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+
+    .mobile-submenu a:last-child {
+        border-bottom: none;
+    }
+
+
+    .mobile-submenu a:active {
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+
+    .main-nav-links {
+        gap: 24px;
+    }
+
+
+    .main-nav-links > li > a,
+    .dropdown-title {
+        font-size: 18px;
+    }
+
+
+    .dropdown-menu a {
+        font-size: 15px;
+    }
+}
+
+
+/* Extra menu item (Young BMol 2026) – keep everything on one line */
+
+@media (min-width: 1101px) and (max-width: 1180px) {
+
+    .main-nav-links {
+        gap: 24px;
+    }
+
+
+    .main-nav-links > li > a,
+    .dropdown-title {
+        font-size: 18px;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width: 1060px) {
+
+    .desktop-navbar {
+        padding: 0 12px;
+    }
+
+
+    .main-nav-links {
+        gap: 16px;
+    }
+
+
+    .main-nav-links > li > a,
+    .dropdown-title {
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width: 880px) {
+
+    .main-nav-links {
+        gap: 11px;
+    }
+
+
+    .main-nav-links > li > a,
+    .dropdown-title {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /*
+       Important:
+       desktop dropdowns are completely disabled on mobile.
+       Mobile uses React state instead.
+    */
+
+    .desktop-navbar {
+        display: none !important;
+    }
+
+
+    .mobile-navbar {
+        display: block !important;
+    }
+}

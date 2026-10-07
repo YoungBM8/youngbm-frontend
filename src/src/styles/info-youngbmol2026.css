@@ -1,0 +1,64 @@
+/* ================= YOUNG BMol 2026 – INFO PAGE ================= */
+
+.info2026-hero,
+.info2026-hero *,
+.info2026-lisbon-section,
+.info2026-lisbon-section *{
+    box-sizing:border-box;
+}
+
+.info2026-hero{
+    gap:16px;
+}
+
+.info2026-logo{
+    width:170px;
+    height:auto;
+    object-fit:contain;
+}
+
+.info2026-hero .applyhere-date-text{
+    margin-top:0;
+    font-size:13px;
+    text-align:center;
+    padding:0 16px;
+}
+
+.info2026-lisbon-section{
+    background-image:url("../assets/hero-lisbon.png");
+}
+
+.info2026-card p{
+    font-size:13px;
+}
+
+.info2026-button{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-top:4px;
+    padding:8px 18px;
+
+    background:#338c82;
+    color:#ffffff;
+
+    border-radius:5px;
+
+    font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+
+    transition:background .25s;
+}
+
+.info2026-button:hover{
+    background:#29756d;
+}
+
+@media(max-width:600px){
+    .info2026-logo{
+        width:140px;
+    }
+}
