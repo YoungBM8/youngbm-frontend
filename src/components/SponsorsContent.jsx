@@ -15,6 +15,10 @@ import navigator from "../assets/Navigator.png";
 import tetley from "../assets/Tetley.png";
 import giotto from "../assets/Giotto.png";
 import amorimLogo from "../assets/amorim-cork.png";
+import aralabLogo from "../assets/aralab.png";
+import stabiloLogo from "../assets/stabilo.png";
+import portoEditoraLogo from "../assets/porto-editora.png";
+import synlabLogo from "../assets/synlab.png";
 
 /*
     Young BMol 2026 sponsors, grouped by tier and listed in display order.
@@ -33,7 +37,7 @@ const sponsorTiers = [
             { name: "Instituto Dom Luiz", logo: idlLogo, className: "sponsor-logo--idl" },
             { name: "Sociedade Portuguesa de Genética Humana", logo: spghLogo, className: "sponsor-logo--spgh" },
             { name: "Ordem dos Biólogos", logo: ordemBiologosLogo, className: "sponsor-logo--ordem" },
-            { name: "Aralab", logo: null },
+            { name: "Aralab", logo: aralabLogo, className: "sponsor-logo--aralab" },
             { name: "Carris", logo: carrisLogo, className: "sponsor-logo--carris" },
         ],
     },
@@ -46,7 +50,7 @@ const sponsorTiers = [
             { name: "Applied Microbiology International", logo: appliedMicrobiologyLogo, className: "sponsor-logo--applied" },
             { name: "Lidel", logo: lidelLogo, className: "sponsor-logo--lidel" },
             { name: "The Navigator Company", logo: navigator, className: "sponsor-logo--navigator" },
-            { name: "Stabilo", logo: null },
+            { name: "Stabilo", logo: stabiloLogo, className: "sponsor-logo--stabilo" },
             { name: "Faculdade de Ciências da Universidade de Lisboa", logo: fculLogo, className: "sponsor-logo--fcul" },
         ],
     },
@@ -54,8 +58,8 @@ const sponsorTiers = [
         id: "bronze",
         title: "Bronze Sponsors",
         sponsors: [
-            { name: "Porto Editora", logo: null },
-            { name: "Synlab", logo: null },
+            { name: "Porto Editora", logo: portoEditoraLogo, className: "sponsor-logo--porto" },
+            { name: "Synlab", logo: synlabLogo, className: "sponsor-logo--synlab" },
             { name: "Amorim Cork", logo: amorimLogo, className: "sponsor-logo--amorim" },
             { name: "Pastéis de Belém", logo: pasteisBelemLogo, className: "sponsor-logo--pasteis" },
             { name: "Tetley", logo: tetley, className: "sponsor-logo--tetley" },

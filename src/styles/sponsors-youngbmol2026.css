@@ -435,6 +435,28 @@
     font-size: 13px;
 }
 
+/* Logos added for the tiered layout */
+
+.sponsor-logo--aralab {
+    max-width: 70%;
+    max-height: 120px;
+}
+
+.sponsor-logo--stabilo {
+    max-width: 85%;
+    max-height: 70px;
+}
+
+.sponsor-logo--porto {
+    max-width: 85%;
+    max-height: 80px;
+}
+
+.sponsor-logo--synlab {
+    max-width: 88%;
+    max-height: 60px;
+}
+
 /* Sponsor without a logo yet */
 
 .sponsor-logo-placeholder {
