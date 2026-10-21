@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PageComponents from "../components/PageComponents";
 import ContactContent from "../components/ContactContent";
 
 import "../styles/contact.css";
@@ -11,6 +12,8 @@ export default function Contact() {
             <Header />
             <Navbar />
             <ContactContent />
+            <PageComponents slug="contact" />
+
             <Footer />
         </div>
     );

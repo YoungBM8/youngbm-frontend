@@ -167,77 +167,37 @@
     color: #174f49;
 }
 
-/* AJUSTES INDIVIDUAIS DOS LOGOS */
+/* Logo size presets (chosen per sponsor in the back office) */
 
-.sponsor-logo--applied {
-    max-width: 92%;
-    max-height: 145px;
-}
-
-.sponsor-logo--fcul {
-    max-width: 88%;
-    max-height: 140px;
-}
-
-.sponsor-logo--carris {
-    max-width: 68%;
-    max-height: 125px;
-}
-
-.sponsor-logo--pasteis {
+.sponsor-logo--s {
     max-width: 58%;
     max-height: 145px;
 }
 
-.sponsor-logo--idl {
-    max-width: 90%;
-    max-height: 145px;
-}
-
-.sponsor-logo--ordem {
-    max-width: 78%;
-    max-height: 145px;
-}
-
-.sponsor-logo--neb {
-    max-width: 66%;
-    max-height: 150px;
-}
-
-.sponsor-logo--spgh {
-    max-width: 58%;
-    max-height: 170px;
-}
-
-.sponsor-logo--celeiro {
+.sponsor-logo--m {
     max-width: 68%;
     max-height: 130px;
 }
 
-.sponsor-logo--lidel {
-    max-width: 70%;
-    max-height: 135px;
+.sponsor-logo--l {
+    max-width: 88%;
+    max-height: 145px;
 }
 
-.sponsor-logo--navigator {
+.sponsor-logo--xl {
     max-width: 90%;
     max-height: 175px;
 }
 
-.sponsor-logo--tetley {
-    max-width: 90%;
-    max-height: 175px;
+.sponsor-card h2 a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.sponsor-logo--giotto {
-    max-width: 90%;
-    max-height: 175px;
+.sponsor-card h2 a:hover {
+    text-decoration: underline;
 }
 
-.sponsor-logo--amorim {
-    max-width: 90%;
-    max-height: 175px;
-}
 /* TABLET */
 
 @media (max-width: 980px) {
@@ -290,13 +250,25 @@
         max-height: 135px;
     }
 
-    .sponsor-logo--spgh {
-        max-height: 150px;
-    }
-
     .sponsor-card h2 {
         min-height: auto;
         margin-top: 12px;
         font-size: 14px;
     }
+}
+
+/* Sponsor grid used as a component on any page */
+.sponsors-block {
+    padding: 0 32px 48px;
+    box-sizing: border-box;
+    font-family: "Avenir LT Std", "Avenir", "Helvetica Neue", sans-serif;
+}
+
+.sponsors-main .sponsors-block {
+    padding: 0;
+}
+
+/* The sponsors page already names the edition in its header */
+.sponsors-main .sponsors-block .component-heading-eyebrow {
+    display: none;
 }

@@ -1,0 +1,51 @@
+/* HTML written in the back office (FAQ answers, page texts, cards...) */
+
+:where(.rich-text) > :first-child {
+    margin-top: 0;
+}
+
+:where(.rich-text) > :last-child {
+    margin-bottom: 0;
+}
+
+:where(.rich-text) p {
+    margin: 0 0 1em;
+}
+
+:where(.rich-text) ul,
+:where(.rich-text) ol {
+    margin: 0 0 1em;
+    padding-left: 1.4em;
+}
+
+:where(.rich-text) li {
+    margin-bottom: 0.35em;
+}
+
+:where(.rich-text) a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+:where(.rich-text) h1,
+:where(.rich-text) h2,
+:where(.rich-text) h3,
+:where(.rich-text) h4 {
+    margin: 1.2em 0 0.5em;
+    line-height: 1.25;
+}
+
+:where(.rich-text) blockquote {
+    margin: 0 0 1em;
+    padding-left: 1em;
+    border-left: 3px solid currentColor;
+    opacity: 0.85;
+}
+
+:where(.rich-text) hr {
+    border: 0;
+    border-top: 1px solid currentColor;
+    opacity: 0.3;
+    margin: 1.5em 0;
+}

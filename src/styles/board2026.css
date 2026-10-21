@@ -194,3 +194,9 @@
         font-size:16px;
     }
 }
+
+/* Board list used as a component on any page */
+.board2026-block {
+    color: #03443d;
+    font-family: "Avenir LT Std", "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+}

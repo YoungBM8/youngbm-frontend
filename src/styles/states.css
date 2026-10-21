@@ -1,0 +1,44 @@
+/* Loading and error placeholders while content arrives from the back office */
+
+.page-state {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #4a5a63;
+    font-size: 1.05rem;
+}
+
+.page-state--compact {
+    min-height: 0;
+    padding: 1.5rem 1rem;
+}
+
+.page-state--error p {
+    margin: 0;
+    max-width: 36rem;
+}
+
+.page-state-spinner {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    border: 3px solid rgba(74, 90, 99, 0.25);
+    border-top-color: #4a5a63;
+    animation: page-state-spin 0.9s linear infinite;
+}
+
+@keyframes page-state-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-state-spinner {
+        animation: none;
+    }
+}

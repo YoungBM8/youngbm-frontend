@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PageComponents from "../components/PageComponents";
 
 import ApplyHereHero from "../components/ApplyHereHero";
 import ApplyHereBlueMenu from "../components/ApplyHereBlueMenu";
@@ -23,6 +24,9 @@ export default function ApplyHereYoungBMol2026() {
             <ApplyHereBlueMenu />
 
             <ApplyHereCard />
+
+            <PageComponents slug="apply-here" />
+
 
             <Footer />
 

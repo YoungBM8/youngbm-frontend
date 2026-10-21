@@ -1,8 +1,17 @@
 import { useState } from "react";
 
+import { usePage } from "../api/client";
+import { useSite } from "../context/useSite";
+import RichText from "./RichText";
+
 import "../styles/contact.css";
 
 export default function ContactContent() {
+    const { settings } = useSite();
+    const { data: page } = usePage("contact");
+
+    const email = settings?.contact_email ?? "youngbmnetwork@gmail.com";
+
     const [formData, setFormData] = useState({
         first_name: "",
         last_name: "",
@@ -100,17 +109,9 @@ export default function ContactContent() {
     return (
         <main className="contact-main">
             <section className="contact-intro">
-                <h1>Contact us</h1>
+                <h1>{page?.title ?? "Contact us"}</h1>
 
-                <p>
-                    If you have any questions about the congress, would like to
-                    sign up for the next edition as a participant or volunteer,
-                    or are interested in collaborating with us, we would love
-                    to hear from you. We are always looking for people and
-                    sponsors who are open to other cultures, eager to meet new
-                    people across Europe, and keen to become part of the Young
-                    BM Network.
-                </p>
+                <RichText html={page?.intro} />
             </section>
 
             <section className="contact-box">
@@ -118,8 +119,8 @@ export default function ContactContent() {
                     <div className="contact-email">
                         <p>Email:</p>
 
-                        <a href="mailto:youngbmnetwork@gmail.com">
-                            youngbmnetwork@gmail.com
+                        <a href={`mailto:${email}`}>
+                            {email}
                         </a>
                     </div>
 
@@ -167,8 +168,9 @@ export default function ContactContent() {
                         <p>Our social media:</p>
 
                         <div className="contact-social-icons">
+                            {settings?.linkedin_url && (
                             <a
-                                href="https://www.linkedin.com/company/youngbmnet"
+                                href={settings.linkedin_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn"
@@ -177,9 +179,11 @@ export default function ContactContent() {
                                     <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8A53.79 53.79 0 0 1 53.79 0a53.79 53.79 0 1 1 0 108.1zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.7-48.3 87.88-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
                                 </svg>
                             </a>
+                            )}
 
+                            {settings?.instagram_url && (
                             <a
-                                href="https://www.instagram.com/youngbmnet"
+                                href={settings.instagram_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram"
@@ -214,6 +218,7 @@ export default function ContactContent() {
                                     />
                                 </svg>
                             </a>
+                            )}
                         </div>
                     </div>
                 </div>

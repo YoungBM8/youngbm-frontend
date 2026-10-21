@@ -169,3 +169,9 @@
         max-width:330px;
     }
 }
+
+.volunteer-button--disabled {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+}

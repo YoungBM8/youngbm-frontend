@@ -148,3 +148,16 @@
         font-size:11px;
     }
 }
+
+.student-org-card a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Student organisations list used as a component on any page */
+.student-org-block {
+    color: #03443d;
+    font-family: "Avenir LT Std", "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+}

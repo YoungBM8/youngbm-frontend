@@ -362,3 +362,9 @@
         height:30px;
     }
 }
+
+/* FAQ list used as a component on any page */
+.faq-block {
+    color: #031f1d;
+    font-family: "Avenir LT Std", "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+}

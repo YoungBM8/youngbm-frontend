@@ -1,10 +1,9 @@
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PageComponents from "../components/PageComponents";
 
-import AboutOurCongressHero from "../components/AboutOurCongressHero";
-import AboutOurCongressStructure from "../components/AboutOurCongressStructure";
-import AboutOurCongressCollaborateBox from "../components/AboutOurCongressCollaborateBox";
+import AboutOurCongressContent from "../components/AboutOurCongressContent";
 
 import "../styles/aboutourcongress.css";
 
@@ -14,9 +13,10 @@ export default function AboutOurCongress() {
             <Header />
             <Navbar />
 
-            <AboutOurCongressHero />
-            <AboutOurCongressStructure />
-            <AboutOurCongressCollaborateBox />
+            <AboutOurCongressContent />
+
+            <PageComponents slug="about-congress" exclude={["card", "cta"]} />
+
 
             <Footer />
         </div>

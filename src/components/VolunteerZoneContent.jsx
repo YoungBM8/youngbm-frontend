@@ -1,89 +1,58 @@
+import { usePage } from "../api/client";
+import { useSite } from "../context/useSite";
+import { Loadable } from "./PageState";
+import RichText from "./RichText";
+
 import "../styles/volunteerzone-youngbmol2026.css";
 
 export default function VolunteerZoneContent() {
+    const { current } = useSite();
+    const { data: page, loading, error } = usePage("volunteer-zone");
+
+    const congress = current.congress;
+    const teams = (page?.sections ?? []).filter((section) => section.kind === "card");
+
     return (
         <main className="volunteer-main">
 
             <section className="volunteer-intro">
-                <h1>Volunteer zone</h1>
+                <h1>{page?.title ?? "Volunteer zone"}</h1>
 
-                <p>
-                    As a volunteer, you will have the opportunity to participate in the event
-                    behind the scenes. Various organisational tasks — such as social media,
-                    support to the organisers, assistance at the university, accommodation,
-                    excursions, and social programme activities — require extra help from local students.
-                </p>
+                <Loadable loading={loading} error={error} compact>
+                    <RichText html={page?.intro} />
+                </Loadable>
 
-                <p className="volunteer-highlight">
-                    Please note that only students from the host country are eligible to volunteer.
-                </p>
-
-                <p>
-                    The responsibility of the volunteer lies in a firm commitment to participate
-                    when required, before and during the event. Schedules and preferred tasks
-                    will be agreed upon in advance with each volunteer.
-                </p>
-
-                <a
-                    href=""
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="volunteer-button"
-                >
-                    Volunteer form soon...
-                </a>
+                {congress?.volunteer_form_url ? (
+                    <a
+                        href={congress.volunteer_form_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="volunteer-button"
+                    >
+                        Volunteer form
+                    </a>
+                ) : (
+                    <span className="volunteer-button volunteer-button--disabled" aria-disabled="true">
+                        Volunteer form soon...
+                    </span>
+                )}
             </section>
 
-            <section className="volunteer-teams">
-                <h2>Volunteer teams</h2>
+            {teams.length > 0 && (
+                <section className="volunteer-teams">
+                    <h2>{page?.subtitle || "Volunteer teams"}</h2>
 
-                <div className="teams-grid">
+                    <div className="teams-grid">
+                        {teams.map((team) => (
+                            <div className="team-card" key={team.id}>
+                                <h3>{team.title}</h3>
 
-                    <div className="team-card">
-                        <h3>
-                            Transport, Welcome and Trips
-                            <br />
-                            Volunteer Team
-                        </h3>
-
-                        <ul>
-                            <li>Assisting participants with airport and station transfers</li>
-                            <li>Welcoming participants and helping with check-in</li>
-                            <li>Guiding and accompanying groups during social trips</li>
-                        </ul>
+                                <RichText html={team.body} />
+                            </div>
+                        ))}
                     </div>
-
-                    <div className="team-card">
-                        <h3>
-                            University and Academic
-                            <br />
-                            Program Volunteer Team
-                        </h3>
-
-                        <ul>
-                            <li>Assisting with the congress registration desk</li>
-                            <li>Helping with lecture halls and presentation rooms</li>
-                            <li>Supporting oral and poster presentations and academic sessions</li>
-                            <li>Supporting the organisation of workshops and academic discussions</li>
-                        </ul>
-                    </div>
-
-                    <div className="team-card">
-                        <h3>
-                            Social Program Volunteer
-                            <br />
-                            Team
-                        </h3>
-
-                        <ul>
-                            <li>Assisting with the preparation and setup of social events</li>
-                            <li>Helping to coordinate group activities and ice-breaking sessions</li>
-                            <li>Supporting networking moments during the congress</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </section>
+                </section>
+            )}
 
             <div className="volunteer-brush"></div>
 

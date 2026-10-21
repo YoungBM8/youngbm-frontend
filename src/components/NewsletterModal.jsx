@@ -1,8 +1,12 @@
 import { useState } from "react";
 
+import { useSite } from "../context/useSite";
+
 import "../styles/newsletterModal.css";
 
 export default function NewsletterModal({ isOpen, onClose }) {
+    const { settings } = useSite();
+
     const [email, setEmail] = useState("");
     const [consentGiven, setConsentGiven] = useState(false);
     const [status, setStatus] = useState("");
@@ -77,15 +81,12 @@ export default function NewsletterModal({ isOpen, onClose }) {
                 </button>
 
                 <h2>
-                    Get the Latest
-                    <br />
-                    News to Your
-                    <br />
-                    Inbox
+                    {settings?.newsletter_title ?? "Get the Latest News to Your Inbox"}
                 </h2>
 
                 <p>
-                    Subscribe to our newsletter to receive news and updates.
+                    {settings?.newsletter_text ??
+                        "Subscribe to our newsletter to receive news and updates."}
                 </p>
 
                 <form onSubmit={handleSubmit}>
@@ -113,8 +114,8 @@ export default function NewsletterModal({ isOpen, onClose }) {
                         />
 
                         <span>
-                            I agree to receive news and updates from Young BM
-                            Network.
+                            {settings?.newsletter_consent_text ??
+                                "I agree to receive news and updates from Young BM Network."}
                         </span>
                     </label>
 

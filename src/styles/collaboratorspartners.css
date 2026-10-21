@@ -208,3 +208,9 @@
         max-height:240px;
     }
 }
+
+/* Partners list used as a component on any page */
+.collaborators-block {
+    color: #03443d;
+    font-family: "Avenir LT Std", "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+}

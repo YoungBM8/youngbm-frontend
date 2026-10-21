@@ -1,69 +1,90 @@
-import { Link } from "react-router-dom";
-
 import {
-    GraduationCap,
+    Award,
+    BookOpen,
+    Bus,
     CalendarDays,
-    Users,
-    Handshake,
-    ClipboardCheck,
-    Trees,
+    Camera,
     CircleHelp,
-    Mail
+    ClipboardCheck,
+    Download,
+    FileText,
+    FlaskConical,
+    Globe,
+    GraduationCap,
+    Handshake,
+    Heart,
+    Home,
+    Info,
+    Leaf,
+    Mail,
+    MapPin,
+    Megaphone,
+    Mic,
+    Microscope,
+    Music,
+    Newspaper,
+    Sparkles,
+    Star,
+    Trees,
+    Users,
+    Utensils
 } from "lucide-react";
+
+import { useSite } from "../context/useSite";
+import MenuLink from "./MenuLink";
 
 import "../styles/applyhere-youngbmol2026.css";
 
+// Must match ICON_CHOICES in the backend (content/models.py).
+const ICONS = {
+    Award,
+    BookOpen,
+    Bus,
+    CalendarDays,
+    Camera,
+    CircleHelp,
+    ClipboardCheck,
+    Download,
+    FileText,
+    FlaskConical,
+    Globe,
+    GraduationCap,
+    Handshake,
+    Heart,
+    Home,
+    Info,
+    Leaf,
+    Mail,
+    MapPin,
+    Megaphone,
+    Mic,
+    Microscope,
+    Music,
+    Newspaper,
+    Sparkles,
+    Star,
+    Trees,
+    Users,
+    Utensils
+};
+
 export default function ApplyHereBlueMenu() {
-    const items = [
-        {
-            icon: GraduationCap,
-            label: "Academic Part",
-            path: "/about/academic-part"
-        },
-        {
-            icon: Handshake,
-            label: "Social Part",
-            path: "/about/social-part"
-        },
-        {
-            icon: ClipboardCheck,
-            label: "Application process",
-            path: "/bmol/application-process"
-        },
-        {
-            icon: CircleHelp,
-            label: "FAQ",
-            path: "/faq"
-        },
-        {
-            icon: CalendarDays,
-            label: "Preliminary schedule",
-            path: null
-        },
-        {
-            icon: Users,
-            label: "Volunteer zone",
-            path: "/bmol/volunteer-zone"
-        },
-        {
-            icon: Trees,
-            label: "Nature Workshop",
-            path: null
-        },
-        {
-            icon: Mail,
-            label: "Contact",
-            path: "/contact"
-        }
-    ];
+    const { menus, current } = useSite();
+
+    const items = menus.apply_grid;
+    const congress = current.congress;
+
+    if (items.length === 0) {
+        return null;
+    }
 
     return (
         <section className="applyhere-blue-section">
-            <h2>About YOUNG BMEco 2027</h2>
+            <h2>About {congress?.name ?? "the congress"}</h2>
 
             <div className="applyhere-icons-grid">
                 {items.map((item) => {
-                    const Icon = item.icon;
+                    const Icon = ICONS[item.icon] ?? Info;
 
                     const content = (
                         <>
@@ -77,22 +98,22 @@ export default function ApplyHereBlueMenu() {
                         </>
                     );
 
-                    if (item.path) {
+                    if (item.href) {
                         return (
-                            <Link
-                                to={item.path}
+                            <MenuLink
+                                item={item}
                                 className="applyhere-icon-item"
-                                key={item.label}
+                                key={item.id}
                             >
                                 {content}
-                            </Link>
+                            </MenuLink>
                         );
                     }
 
                     return (
                         <div
                             className="applyhere-icon-item applyhere-icon-disabled"
-                            key={item.label}
+                            key={item.id}
                         >
                             {content}
                         </div>

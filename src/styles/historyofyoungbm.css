@@ -338,3 +338,9 @@
         transform:none;
     }
 }
+
+/* Editions timeline used as a component on any page */
+.timeline-block {
+    color: #03443d;
+    font-family: "Avenir LT Std", "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+}

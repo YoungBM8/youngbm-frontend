@@ -1,16 +1,65 @@
-# React + Vite
+# Young BM Network — website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React 19 + Vite + React Router. All editable content (menus, texts, images,
+news slides, editions, sponsors, speakers…) comes from the Django backend's
+read-only API; the owners change it in the back office, no deploy needed.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+nvm use 22            # Vite 8 needs Node 20.19+ / 22.12+
+npm install
+cp .env.example .env  # VITE_API_URL=http://localhost:8000
+npm run dev
+```
 
-## React Compiler
+Run the backend alongside (see `../youngbm-backend/README.md`). The site shows
+loading placeholders until the API answers.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How content flows
 
-## Expanding the Oxlint configuration
+* `src/api/client.js` — `fetchJson`, `useApi(path)`, `usePage(slug)`. Responses
+  are cached per path for the lifetime of the tab.
+* `src/context/SiteContext.jsx` — loads `/api/site/` once: site settings,
+  menus and the current congress / seminar editions. `useSite()` anywhere.
+* `src/components/RichText.jsx` — renders HTML written in the back office.
+  The backend sanitises it on save.
+* Page components (`src/components/*Content.jsx`) keep the original markup and
+  CSS classes and fill them from `usePage("<slug>")` plus list endpoints.
+* `src/components/PageSections.jsx` renders a page's sections in order: text
+  blocks, card grids and call-to-action boxes with the generic designs, and
+  *component* sections through `src/components/ComponentSection.jsx`
+  (slideshow, FAQ list, board, partners, student organisations, sponsors,
+  speakers, editions timeline; the blocks live in `src/components/blocks/`).
+  The home page, the list pages (FAQ, board, partners, student organisations,
+  sponsors, speakers), Our Story and owner-created pages (`/pages/:slug`) are
+  "header + sections".
+* Pages with a fixed design consume their block/card/cta sections themselves
+  and render any other sections below the fixed content through
+  `src/components/PageComponents.jsx`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Decorative images that are part of the design stay in `src/assets`
+(logo, arrows, seminar illustrations). Everything else is uploaded through
+the back office. The remaining files in `src/assets` are used by the backend's
+`seed_content` command and can be removed once production has been seeded.
+
+## Adding a new built-in page
+
+1. Backend: add `(slug, path, title, subtitle)` to `content/builtin.py` and run
+   `python manage.py bootstrap_cms`.
+2. Frontend: create the page component, read `usePage("<slug>")`, render its
+   sections with `PageSections` (or `PageComponents` below a fixed design), and
+   add the route in `src/App.jsx` with the same path.
+3. The owners can now link it from Menus.
+
+## Icons
+
+The apply-page icon grid uses lucide icons chosen in the back office. The list
+in `src/components/ApplyHereBlueMenu.jsx` must match `ICON_CHOICES` in the
+backend's `content/models.py`.
+
+## Scripts
+
+* `npm run dev` — development server
+* `npm run build` — production build to `dist/`
+* `npm run lint` — oxlint

@@ -1,7 +1,8 @@
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import SeminarApplyHereContent from "../components/Seminar2ApplyHereContent";
+import PageComponents from "../components/PageComponents";
+import SeminarApplyHereContent from "../components/SeminarApplyHereContent";
 
 import "../styles/seminar-apply-here.css";
 
@@ -11,6 +12,8 @@ export default function SeminarApplyHere() {
             <Header />
             <Navbar />
             <SeminarApplyHereContent />
+            <PageComponents slug="seminar-apply" />
+
             <Footer />
         </div>
     );

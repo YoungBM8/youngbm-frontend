@@ -617,3 +617,9 @@
         display: block !important;
     }
 }
+
+/* Menu labels come from the back office: keep dropdown entries on one line */
+.dropdown-menu li a,
+.dropdown-menu li span {
+    white-space: nowrap;
+}

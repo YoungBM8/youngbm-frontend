@@ -1,11 +1,37 @@
 import seminarLeft from "../assets/seminar-left.png";
 import seminarRight from "../assets/seminar-right.png";
 
+import { usePage } from "../api/client";
+import { useSite } from "../context/useSite";
+import { LoadingState } from "./PageState";
+import RichText from "./RichText";
+
 import "../styles/seminar-apply-here.css";
 
-const SEMINAR_APPLICATION_URL = "#";
+function ApplyButton({ seminar, className = "" }) {
+    if (!seminar?.applications_open || !seminar.application_form_url) {
+        return null;
+    }
+
+    return (
+        <a
+            href={seminar.application_form_url}
+            target="_blank"
+            rel="noreferrer"
+            className={`seminar-apply-button ${className}`.trim()}
+        >
+            Apply here!
+        </a>
+    );
+}
 
 export default function SeminarApplyHereContent() {
+    const { current, loading } = useSite();
+    const { data: page } = usePage("seminar-apply");
+
+    const seminar = current.seminar;
+    const label = page?.subtitle || "Young BM Seminar";
+
     return (
         <main className="seminar-apply-main">
 
@@ -14,135 +40,114 @@ export default function SeminarApplyHereContent() {
                 <div className="seminar-side-image">
                     <img
                         src={seminarLeft}
-                        alt="Seminar illustration left"
+                        alt=""
                     />
                 </div>
 
                 <div className="seminar-hero-content">
 
                     <span className="seminar-hero-label">
-                        Young BM Seminar
+                        {label}
                     </span>
 
-                    <h1>Industry vs Academia</h1>
+                    <h1>{seminar?.name ?? page?.title ?? "Young BM Seminar"}</h1>
 
-                    <p className="seminar-hero-subtitle">
-                        1st edition of Young Biologists Matter Seminar
-                        <br />
-                        on the 6th of June 2026
-                    </p>
+                    {seminar?.subtitle && (
+                        <p className="seminar-hero-subtitle">
+                            {seminar.subtitle}
+                        </p>
+                    )}
 
-                    <a
-                        href={SEMINAR_APPLICATION_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="seminar-apply-button"
-                    >
-                        Apply here!
-                    </a>
+                    <ApplyButton seminar={seminar} />
 
                 </div>
 
                 <div className="seminar-side-image">
                     <img
                         src={seminarRight}
-                        alt="Seminar illustration right"
+                        alt=""
                     />
                 </div>
 
             </section>
 
-            <section className="seminar-about-section">
+            {loading && <LoadingState compact />}
 
-                <div className="seminar-section-heading">
-                    <span>Young BM Seminar</span>
-
-                    <h2>About</h2>
-                </div>
-
-                <p className="seminar-about-text">
-                    We are excited to launch the first Young Biologists Matter
-                    Online Seminar. This event kicks off a seminar series running
-                    from June 2026 until the Young BMol 2026 Congress, taking
-                    place in Lisbon, Portugal, from the 16th to the 21st of
-                    November 2026.
-                </p>
-
-            </section>
-
-            <section className="seminar-information-section">
-
-                <div className="seminar-information-grid">
-
-                    <article className="seminar-information-block">
-
-                        <h2>What to expect</h2>
-
-                        <ul>
-                            <li>Panel discussions</li>
-                            <li>Career insights</li>
-                            <li>Live audience Q&amp;A</li>
-                            <li>Networking</li>
-                        </ul>
-
-                    </article>
-
-                    <article className="seminar-information-block">
-
-                        <h2>Event details</h2>
-
-                        <ul>
-                            <li>Online event</li>
-                            <li>6th June 2026</li>
-                            <li>9:00 until 12:30 UTC+1</li>
-                        </ul>
-
-                    </article>
-
-                </div>
-
-                <p className="seminar-information-message">
-                    We would love for you to join us for this insightful
-                    conversation about career paths in science. Stay tuned
-                    for speaker announcements!
-                </p>
-
-            </section>
-
-            <section className="seminar-eligibility-section">
-
-                <div className="seminar-eligibility-title">
-
-                    <span>Applications</span>
-
-                    <h2>Who can apply</h2>
-
-                    <div className="seminar-small-line" />
-
-                    <strong>Participation is free!</strong>
-
-                </div>
-
-                <div className="seminar-eligibility-content">
-
-                    <p>
-                        If you are a student in any European country in a field
-                        of biosciences at bachelor, master, PhD or postdoctoral
-                        level, you can apply to the conference.
+            {!loading && !seminar && (
+                <section className="seminar-about-section">
+                    <p className="seminar-about-text">
+                        The next seminar will be announced soon.
                     </p>
+                </section>
+            )}
 
-                    <a
-                        href={SEMINAR_APPLICATION_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="seminar-apply-button seminar-bottom-button"
-                    >
-                        Apply here!
-                    </a>
+            {seminar?.description && (
+                <section className="seminar-about-section">
 
-                </div>
+                    <div className="seminar-section-heading">
+                        <span>{label}</span>
 
-            </section>
+                        <h2>About</h2>
+                    </div>
+
+                    <RichText html={seminar.description} className="seminar-about-text" />
+
+                </section>
+            )}
+
+            {seminar && (seminar.info_blocks?.length > 0 || seminar.closing_message) && (
+                <section className="seminar-information-section">
+
+                    {seminar.info_blocks?.length > 0 && (
+                        <div className="seminar-information-grid">
+
+                            {seminar.info_blocks.map((block) => (
+                                <article className="seminar-information-block" key={block.id}>
+
+                                    <h2>{block.title}</h2>
+
+                                    <RichText html={block.body} />
+
+                                </article>
+                            ))}
+
+                        </div>
+                    )}
+
+                    {seminar.closing_message && (
+                        <p className="seminar-information-message">
+                            {seminar.closing_message}
+                        </p>
+                    )}
+
+                </section>
+            )}
+
+            {seminar && (seminar.eligibility_text || seminar.is_free) && (
+                <section className="seminar-eligibility-section">
+
+                    <div className="seminar-eligibility-title">
+
+                        <span>Applications</span>
+
+                        <h2>Who can apply</h2>
+
+                        <div className="seminar-small-line" />
+
+                        {seminar.is_free && <strong>Participation is free!</strong>}
+
+                    </div>
+
+                    <div className="seminar-eligibility-content">
+
+                        <RichText html={seminar.eligibility_text} />
+
+                        <ApplyButton seminar={seminar} className="seminar-bottom-button" />
+
+                    </div>
+
+                </section>
+            )}
 
         </main>
     );
