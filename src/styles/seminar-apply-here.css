@@ -554,3 +554,127 @@
     }
 
 }
+/* =========================================================
+   3rd SEMINAR – long title + speaker preview
+   ========================================================= */
+
+.seminar-hero-content h1.seminar-hero-title--long{
+    max-width:760px;
+    font-size:52px;
+    line-height:1.1;
+}
+
+.seminar-hero-title-sub{
+    display:block;
+    margin-top:12px;
+
+    font-size:30px;
+    font-style:italic;
+
+    color:#315f5a;
+}
+
+.seminar-speaker-preview{
+    font-family:"Avenir LT Std","Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+    width:min(940px, calc(100% - 48px));
+    margin:0 auto;
+    padding:80px 0;
+
+    display:flex;
+    align-items:center;
+    gap:48px;
+
+    box-sizing:border-box;
+}
+
+.seminar-speaker-preview-image{
+    flex-shrink:0;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+    border:2px solid #2e8177;
+
+    object-fit:cover;
+}
+
+.seminar-speaker-preview-text span{
+    display:block;
+    margin-bottom:10px;
+
+    font-size:14px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+
+    color:#2d8278;
+}
+
+.seminar-speaker-preview-text h2{
+    margin:0 0 14px;
+
+    font-size:38px;
+    font-weight:400;
+
+    color:#03443d;
+}
+
+.seminar-speaker-preview-text p{
+    margin:0 0 20px;
+
+    font-size:17px;
+    line-height:1.7;
+
+    color:#315f5a;
+}
+
+.seminar-speaker-preview-link{
+    font-size:16px;
+    font-weight:600;
+    text-decoration:none;
+
+    color:#2d8278;
+}
+
+.seminar-speaker-preview-link:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:1100px){
+
+    .seminar-hero-content h1.seminar-hero-title--long{
+        font-size:42px;
+    }
+
+    .seminar-hero-title-sub{
+        font-size:24px;
+    }
+}
+
+@media(max-width:680px){
+
+    .seminar-hero-content h1.seminar-hero-title--long{
+        font-size:32px;
+    }
+
+    .seminar-hero-title-sub{
+        font-size:20px;
+    }
+
+    .seminar-speaker-preview{
+        flex-direction:column;
+        text-align:center;
+        gap:28px;
+        padding:60px 0;
+    }
+
+    .seminar-speaker-preview-image{
+        width:170px;
+        height:170px;
+    }
+
+    .seminar-speaker-preview-text h2{
+        font-size:30px;
+    }
+}

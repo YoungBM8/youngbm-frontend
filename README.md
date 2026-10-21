@@ -30,7 +30,8 @@ loading placeholders until the API answers.
   blocks, card grids and call-to-action boxes with the generic designs, and
   *component* sections through `src/components/ComponentSection.jsx`
   (slideshow, FAQ list, board, partners, student organisations, sponsors,
-  speakers, editions timeline; the blocks live in `src/components/blocks/`).
+  speakers, editions timeline, events board, edition summary card; the blocks
+  live in `src/components/blocks/`, edition helpers in `src/utils/editions.js`).
   The home page, the list pages (FAQ, board, partners, student organisations,
   sponsors, speakers), Our Story and owner-created pages (`/pages/:slug`) are
   "header + sections".

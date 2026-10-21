@@ -37,6 +37,12 @@ export default function Navbar() {
                                 <MenuLink item={item} className="dropdown-title" />
 
                                 <ul className="dropdown-menu">
+                                    {item.note && (
+                                        <li className="dropdown-type" aria-hidden="true">
+                                            {item.note}
+                                        </li>
+                                    )}
+
                                     {item.children.map((child) => (
                                         <li key={child.id}>
                                             <MenuLink item={child} />
@@ -102,6 +108,10 @@ export default function Navbar() {
 
                                     {openDropdown === item.id && (
                                         <div className="mobile-submenu">
+                                            {item.note && (
+                                                <span className="mobile-submenu-type">{item.note}</span>
+                                            )}
+
                                             {item.children.map((child) => (
                                                 <MenuLink
                                                     item={child}

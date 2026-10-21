@@ -41,6 +41,10 @@ function App() {
                     <Route path="/young-bmol/volunteer-zone" element={<VolunteerZoneYoungBMol2026 />} />
                     <Route path="/young-bmol/sponsors" element={<SponsorsYoungBMol2026 />} />
 
+                    {/* Previous congress: Young BMol 2026 (Lisbon) */}
+                    <Route path="/young-bmol-2026/info" element={<CustomPage slug="info-young-bmol-2026" />} />
+                    <Route path="/young-bmol-2026/sponsors" element={<SponsorsYoungBMol2026 slug="sponsors-young-bmol-2026" />} />
+
                     {/* Older addresses of the same pages */}
                     <Route path="/bmol/apply-here" element={<ApplyHereYoungBMol2026 />} />
                     <Route path="/bmol/application-process" element={<ApplicationProcessYoungBMol2026 />} />

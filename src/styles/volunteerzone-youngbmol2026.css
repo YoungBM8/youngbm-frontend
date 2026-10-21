@@ -8,7 +8,7 @@
     width:100%;
     min-height:760px;
     background:#ffffff;
-    color:#123b8d;
+    color:#03443d;
 }
 
 /* ---------- INTRO ---------- */
@@ -32,7 +32,7 @@
     font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:28px;
     font-weight:400;
-    color:#b73239;
+    color:#338c82;
 }
 
 .volunteer-intro p{
@@ -41,7 +41,7 @@
     font-family:"Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:13px;
     line-height:1.55;
-    color:#300e0f;
+    color:#03443d;
 }
 
 .volunteer-highlight{
@@ -57,7 +57,7 @@
     width:160px;
     height:28px;
 
-    background:#b73239;
+    background:#338c82;
     color:white;
     text-decoration:none;
 
@@ -84,7 +84,7 @@
     font-family:"Brandon Grotesque","Avenir LT Std","Avenir","Helvetica Neue",sans-serif;
     font-size:28px;
     font-weight:400;
-    color:#b73239;
+    color:#338c82;
 }
 
 .teams-grid{
@@ -99,12 +99,12 @@
     min-height:210px;
 
     background:#d9f0ec;
-    border:1px solid #b73239;
+    border:1px solid #338c82;
     border-radius:8px;
 
     padding:22px 18px;
 
-    color:#300e0f;
+    color:#03443d;
     text-align:left;
 
     box-shadow:0 3px 8px rgba(0,0,0,.12);

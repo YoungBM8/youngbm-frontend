@@ -5,8 +5,8 @@ import RichText from "./RichText";
 
 import "../styles/sponsors-youngbmol2026.css";
 
-export default function SponsorsContent() {
-    const { data: page, loading, error } = usePage("sponsors");
+export default function SponsorsContent({ slug = "sponsors" }) {
+    const { data: page, loading, error } = usePage(slug);
 
     // The edition named on the page's first sponsors section, if any.
     const sponsorsSection = page?.sections?.find((section) => section.kind === "sponsors");

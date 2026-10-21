@@ -1,4 +1,6 @@
 import BoardBlock from "./blocks/BoardBlock";
+import EditionCardBlock from "./blocks/EditionCardBlock";
+import EventsBoardBlock from "./blocks/EventsBoardBlock";
 import FaqBlock from "./blocks/FaqBlock";
 import PartnersBlock from "./blocks/PartnersBlock";
 import SpeakersBlock from "./blocks/SpeakersBlock";
@@ -28,6 +30,10 @@ export default function ComponentSection({ section }) {
             return <SpeakersBlock section={section} />;
         case "timeline":
             return <TimelineBlock section={section} />;
+        case "events":
+            return <EventsBoardBlock section={section} />;
+        case "edition_card":
+            return <EditionCardBlock section={section} />;
         default:
             return null;
     }

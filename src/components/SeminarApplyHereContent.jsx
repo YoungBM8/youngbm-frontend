@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import seminarLeft from "../assets/seminar-left.png";
 import seminarRight from "../assets/seminar-right.png";
 
@@ -50,7 +52,12 @@ export default function SeminarApplyHereContent() {
                         {label}
                     </span>
 
-                    <h1>{seminar?.name ?? page?.title ?? "Young BM Seminar"}</h1>
+                    <h1 className={seminar?.name_subtitle ? "seminar-hero-title--long" : undefined}>
+                        {seminar?.name ?? page?.title ?? "Young BM Seminar"}
+                        {seminar?.name_subtitle && (
+                            <span className="seminar-hero-title-sub">{seminar.name_subtitle}</span>
+                        )}
+                    </h1>
 
                     {seminar?.subtitle && (
                         <p className="seminar-hero-subtitle">
@@ -120,6 +127,30 @@ export default function SeminarApplyHereContent() {
                         </p>
                     )}
 
+                </section>
+            )}
+
+            {seminar?.speakers?.[0] && (
+                <section className="seminar-speaker-preview">
+                    {seminar.speakers[0].image && (
+                        <img
+                            src={seminar.speakers[0].image}
+                            alt={seminar.speakers[0].name}
+                            className="seminar-speaker-preview-image"
+                        />
+                    )}
+
+                    <div className="seminar-speaker-preview-text">
+                        <span>{seminar.speakers.length > 1 ? "Speakers" : "Speaker"}</span>
+
+                        <h2>{seminar.speakers[0].name}</h2>
+
+                        <p>{seminar.speakers[0].summary || seminar.speakers[0].tagline || seminar.speakers[0].role}</p>
+
+                        <Link to="/seminar/speakers" className="seminar-speaker-preview-link">
+                            {seminar.speakers.length > 1 ? "Meet the speakers →" : "Meet the speaker →"}
+                        </Link>
+                    </div>
                 </section>
             )}
 

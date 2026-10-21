@@ -7,7 +7,9 @@ export const COMPONENT_KINDS = new Set([
     "student_organizations",
     "sponsors",
     "speakers",
-    "timeline"
+    "timeline",
+    "events",
+    "edition_card"
 ]);
 
 export function isComponentSection(section) {
