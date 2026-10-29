@@ -9,16 +9,15 @@ import idlLogo from "../assets/idl.png";
 import ordemBiologosLogo from "../assets/ordem-biologos.png";
 import nebLogo from "../assets/neb.png";
 import spghLogo from "../assets/spgh.png";
-import celeiroLogo from "../assets/celeiro.png";
 import lidelLogo from "../assets/lidel.png";
 import navigator from "../assets/Navigator.png";
-import tetley from "../assets/Tetley.png";
 import giotto from "../assets/Giotto.png";
 import amorimLogo from "../assets/amorim-cork.png";
 import aralabLogo from "../assets/aralab.png";
 import stabiloLogo from "../assets/stabilo.png";
 import portoEditoraLogo from "../assets/porto-editora.png";
 import synlabLogo from "../assets/synlab.png";
+import danoneLogo from "../assets/danone.png";
 
 /*
     Young BMol 2026 sponsors, grouped by tier and listed in display order.
@@ -52,6 +51,7 @@ const sponsorTiers = [
             { name: "The Navigator Company", logo: navigator, className: "sponsor-logo--navigator" },
             { name: "Stabilo", logo: stabiloLogo, className: "sponsor-logo--stabilo" },
             { name: "Faculdade de Ciências da Universidade de Lisboa", logo: fculLogo, className: "sponsor-logo--fcul" },
+            { name: "Danone", logo: danoneLogo, className: "sponsor-logo--danone" },
         ],
     },
     {
@@ -62,9 +62,7 @@ const sponsorTiers = [
             { name: "Synlab", logo: synlabLogo, className: "sponsor-logo--synlab" },
             { name: "Amorim Cork", logo: amorimLogo, className: "sponsor-logo--amorim" },
             { name: "Pastéis de Belém", logo: pasteisBelemLogo, className: "sponsor-logo--pasteis" },
-            { name: "Tetley", logo: tetley, className: "sponsor-logo--tetley" },
             { name: "Giotto", logo: giotto, className: "sponsor-logo--giotto" },
-            { name: "Celeiro", logo: celeiroLogo, className: "sponsor-logo--celeiro" },
         ],
     },
 ];
