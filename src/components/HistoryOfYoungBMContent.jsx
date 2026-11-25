@@ -13,6 +13,7 @@ import malta2024 from "../assets/timeline-malta2024.png";
 import thessaloniki2025 from "../assets/timeline-thessaloniki2025.png";
 import gdansk2026 from "../assets/timeline-gdansk2026.png";
 import lisbon2026 from "../assets/timeline-lisbon2026.png";
+import tirana2027 from "../assets/timeline-tirana2027.jpg";
 
 const timeline = [
     {
@@ -58,6 +59,11 @@ const timeline = [
     {
         image: lisbon2026,
         title: "Lisbon 2026 (Mol)",
+        text: "In November 2026, Young BM Congress celebrated its 10th edition in Lisbon, Portugal. From 16-21st November 110 participants from 16 different countries have gathered to enjoy scientific program and cultural exchange at the same time. Combining these core parts of event with the rich culture and history of Lisbon truly made the 10th edition of our congresses special, both to organizers and participants."
+    },
+    {
+        image: tirana2027,
+        title: "Tirana 2027 (Eco)",
         text: "Stay tuned..."
     }
 ];

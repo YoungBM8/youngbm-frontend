@@ -4,7 +4,6 @@ import anaRaquel from "../assets/ana-raquel-augusto.jpg";
 import aleksandra from "../assets/aleksandra-stjepanovic.jpg";
 import errika from "../assets/errika-sylai.jpg";
 import klea from "../assets/klea-halili.jpg";
-import marija from "../assets/marija-andelkovic.jpg";
 import mara from "../assets/mara-vukicevic.jpg";
 import nuria from "../assets/nuria-munoz.jpg";
 
@@ -56,14 +55,6 @@ const members = [
         text: "I am a fourth-year undergraduate student in the Department of Biology at the Aristotle University of Thessaloniki. I joined the board after participating in the Young BMol 2024 edition, inspired by the opportunity to connect with international students and exchange knowledge.",
         email: "errikasylai16@gmail.com",
         linkedin: "https://www.linkedin.com/in/errika-sylai-2ab281336/"
-    },
-    {
-        image: marija,
-        role: "IT and Partnership Coordinator",
-        name: "Marija Anđelković",
-        text: "A second-year PhD student at the University of Belgrade, Faculty of Biology, specialising in molecular microbiology and biotechnology. I joined Young BM in 2025 with a passion for helping young students and contributing to a supportive scientific community.",
-        email: "mandjelkovic910@gmail.com",
-        linkedin: "http://www.linkedin.com/in/marija-anđelković2000"
     }
 ];
 

@@ -90,23 +90,17 @@ export default function Navbar() {
 
                     <li className="dropdown">
                         <span className="dropdown-title">
-                            Online Seminar
+                            Online Seminars
                         </span>
 
                         <ul className="dropdown-menu seminar-dropdown-menu">
                             <li className="dropdown-type" aria-hidden="true">
-                                Online seminar · 24 Oct 2026
+                                Online seminars · 2026
                             </li>
 
                             <li>
-                                <Link to="/seminar/apply-here">
-                                    Apply Here
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link to="/seminar/speakers">
-                                    Speaker
+                                <Link to="/seminar/first-series">
+                                    First series of seminars
                                 </Link>
                             </li>
                         </ul>
@@ -340,7 +334,7 @@ export default function Navbar() {
                                     toggleDropdown("seminar")
                                 }
                             >
-                                <span>Online Seminar</span>
+                                <span>Online Seminars</span>
                                 <span className="mobile-arrow">
                                     {openDropdown === "seminar"
                                         ? "−"
@@ -352,21 +346,14 @@ export default function Navbar() {
                                 <div className="mobile-submenu">
 
                                     <span className="mobile-submenu-type">
-                                        Online seminar · 24 Oct 2026
+                                        Online seminars · 2026
                                     </span>
 
                                     <Link
-                                        to="/seminar/apply-here"
+                                        to="/seminar/first-series"
                                         onClick={closeMobileMenu}
                                     >
-                                        Apply Here
-                                    </Link>
-
-                                    <Link
-                                        to="/seminar/speakers"
-                                        onClick={closeMobileMenu}
-                                    >
-                                        Speaker
+                                        First series of seminars
                                     </Link>
 
                                 </div>

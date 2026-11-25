@@ -6,7 +6,6 @@ import {
     Monitor,
     Users,
     ArrowRight,
-    Mic,
 } from "lucide-react";
 
 import Countdown from "./Countdown";
@@ -15,12 +14,11 @@ import EventStatusChip from "./EventStatusChip";
 import {
     YOUNG_BMECO_2027_START,
     YOUNG_BMOL_2026_END,
-    YOUNG_BM_SEMINAR_3_START,
-    YOUNG_BM_SEMINAR_2026_END,
     APPLY_URL_BMECO_2027,
-    APPLY_URL_SEMINAR_3,
     getClosedEventStatus,
 } from "../data/events";
+
+import { FIRST_SEMINAR_SERIES, SEMINAR_SERIES_PATH } from "../data/seminars";
 
 import "../styles/home-events.css";
 
@@ -28,8 +26,6 @@ import photoTirana from "../assets/hero-tirana.png";
 import photoLisbon from "../assets/hero-lisbon.png";
 import logoTirana from "../assets/2027Tirana.png";
 import logoLisbon from "../assets/bmol-logo.png";
-import seminarIllustration from "../assets/seminar-illustration.png";
-import speakerSimran from "../assets/simran-ramchandani.png";
 
 /* ---------------- SMALL BUILDING BLOCKS ---------------- */
 
@@ -86,7 +82,6 @@ function EventPhoto({ photo, alt, badge, badgeAlt, badgeRound, tags }) {
 
 export default function HomeEvents() {
     const lisbonStatus = getClosedEventStatus(YOUNG_BMOL_2026_END);
-    const seminar2Status = getClosedEventStatus(YOUNG_BM_SEMINAR_2026_END);
 
     return (
         <main className="home">
@@ -106,32 +101,6 @@ export default function HomeEvents() {
                         every edition, and online seminars you can join from
                         anywhere.
                     </p>
-
-                    <div className="home-next-grid">
-                        <a href="#congresses" className="home-next-card">
-                            <span className="home-next-icon">
-                                <Users size={22} strokeWidth={2} aria-hidden="true" />
-                            </span>
-                            <span className="home-next-text">
-                                <span className="home-next-label">Next congress</span>
-                                <strong>Young BMEco 2027</strong>
-                                <span>Tirana, Albania · 3–7 March 2027</span>
-                            </span>
-                            <ArrowRight className="home-next-arrow" size={18} aria-hidden="true" />
-                        </a>
-
-                        <a href="#seminars" className="home-next-card">
-                            <span className="home-next-icon">
-                                <Monitor size={22} strokeWidth={2} aria-hidden="true" />
-                            </span>
-                            <span className="home-next-text">
-                                <span className="home-next-label">Next online seminar</span>
-                                <strong>Young BM Seminar #3</strong>
-                                <span>Online · 24 October 2026</span>
-                            </span>
-                            <ArrowRight className="home-next-arrow" size={18} aria-hidden="true" />
-                        </a>
-                    </div>
                 </div>
             </section>
 
@@ -269,103 +238,51 @@ export default function HomeEvents() {
                         </p>
                     </header>
 
-                    {/* Featured: 3rd seminar */}
+                    {/* Past: first series of seminars */}
 
-                    <article className="home-event home-event--featured">
-                        <EventPhoto
-                            photo={seminarIllustration}
-                            alt="Young BM online seminar illustration"
-                            tags={
-                                <EventStatusChip variant="current">
-                                    Upcoming
-                                </EventStatusChip>
-                            }
-                        />
+                    <h4 className="home-subheading home-subheading--first">
+                        Past events · {FIRST_SEMINAR_SERIES.title}
+                    </h4>
 
-                        <div className="home-event-body">
-                            <span className="home-event-kicker">
-                                3rd edition · Young Biologists Matter Seminar
-                            </span>
+                    <div className="home-mini-list">
+                        {FIRST_SEMINAR_SERIES.seminars.map((seminar) => (
+                            <article
+                                className="home-event home-event--mini"
+                                key={seminar.id}
+                            >
+                                <div className="home-event-body">
+                                    <div className="home-event-mini-top">
+                                        <EventStatusChip variant="past">
+                                            Past event
+                                        </EventStatusChip>
+                                        <span className="home-event-kicker">
+                                            {seminar.edition} · Young Biologists Matter Seminar
+                                        </span>
+                                    </div>
 
-                            <h3 className="home-event-title home-event-title--long">
-                                Communicating Science in the Digital Era:
-                                Turning Expertise into Impact
-                            </h3>
+                                    <h3 className="home-event-title home-event-title--small">
+                                        {seminar.title}
+                                        {seminar.subtitle && `: ${seminar.subtitle}`}
+                                    </h3>
 
-                            <ul className="home-meta">
-                                <MetaRow icon={Monitor}>Online</MetaRow>
-                                <MetaRow icon={CalendarDays}>24th October 2026</MetaRow>
-                            </ul>
+                                    <ul className="home-meta home-meta--inline">
+                                        <MetaRow icon={Monitor}>Online</MetaRow>
+                                        <MetaRow icon={CalendarDays}>{seminar.date}</MetaRow>
+                                    </ul>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
 
-                            <div className="home-speaker">
-                                <img src={speakerSimran} alt="Simran Ramchandani" />
-                                <span>
-                                    <span className="home-speaker-label">
-                                        <Mic size={13} strokeWidth={2.2} aria-hidden="true" />
-                                        Speaker
-                                    </span>
-                                    <strong>Simran Ramchandani</strong>
-                                    <span>Biologist &amp; science communicator</span>
-                                </span>
-                            </div>
-
-                            <div className="home-countdown-block">
-                                <span className="home-countdown-label">
-                                    <Clock size={16} strokeWidth={2.2} aria-hidden="true" />
-                                    Starts in
-                                </span>
-                                <Countdown
-                                    target={YOUNG_BM_SEMINAR_3_START}
-                                    finishedText="The seminar is happening today!"
-                                />
-                            </div>
-
-                            <div className="home-actions">
-                                <a
-                                    href={APPLY_URL_SEMINAR_3}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="home-button home-button--primary"
-                                >
-                                    Apply here
-                                </a>
-
-                                <Link
-                                    to="/seminar/apply-here"
-                                    className="home-button home-button--ghost"
-                                >
-                                    Read more
-                                    <ArrowRight size={16} aria-hidden="true" />
-                                </Link>
-                            </div>
-                        </div>
-                    </article>
-
-                    {/* Previous: 2nd seminar */}
-
-                    <h4 className="home-subheading">Previous seminar</h4>
-
-                    <article className="home-event home-event--mini">
-                        <div className="home-event-body">
-                            <div className="home-event-mini-top">
-                                <EventStatusChip variant={seminar2Status.variant}>
-                                    {seminar2Status.label}
-                                </EventStatusChip>
-                                <span className="home-event-kicker">
-                                    2nd edition · Young Biologists Matter Seminar
-                                </span>
-                            </div>
-
-                            <h3 className="home-event-title home-event-title--small">
-                                AI in Science: Tools, Methods and Ethics
-                            </h3>
-
-                            <ul className="home-meta home-meta--inline">
-                                <MetaRow icon={Monitor}>Online</MetaRow>
-                                <MetaRow icon={CalendarDays}>5th September 2026</MetaRow>
-                            </ul>
-                        </div>
-                    </article>
+                    <div className="home-actions home-actions--after-list">
+                        <Link
+                            to={SEMINAR_SERIES_PATH}
+                            className="home-button home-button--ghost"
+                        >
+                            Seminars and speakers
+                            <ArrowRight size={16} aria-hidden="true" />
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

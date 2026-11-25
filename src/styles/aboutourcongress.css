@@ -77,12 +77,15 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:48px;
+    flex-wrap:wrap;
+    gap:24px 40px;
     margin-top:24px;
 }
 
 .logo-gdansk{ width:105px; }
 .logo-lisbon{ width:130px; }
+/* the Tirana logo has a white square background, so it is shown as a disc */
+.logo-tirana{ width:128px; border-radius:50%; }
 .logo-2018{ width:160px; }
 .logo-belgrade{ width:190px; }
 .logo-online2025{ width:90px; }

@@ -10,6 +10,7 @@ import logo2025Online from "../assets/2025online-bmol7.png";
 import logoGdansk from "../assets/2026Gdansk-bmol5.png";
 import logoLisbon from "../assets/2026Lisbon-bmol6.png";
 import logoThess from "../assets/Thess-bmol8.png";
+import logoTirana from "../assets/2027Tirana.png";
 
 export default function AboutOurCongressHero() {
     return (
@@ -55,6 +56,7 @@ export default function AboutOurCongressHero() {
                     <div className="about-bottom-logos">
                         <img src={logoGdansk} alt="Young BMeco Gdansk 2026" className="about-logo logo-gdansk" />
                         <img src={logoLisbon} alt="Young BMol Lisbon 2026" className="about-logo logo-lisbon" />
+                        <img src={logoTirana} alt="Young BMEco Tirana 2027" className="about-logo logo-tirana" />
                     </div>
                 </div>
 

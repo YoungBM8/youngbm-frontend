@@ -280,6 +280,7 @@
 
 .dropdown-menu li.dropdown-type {
     padding: 12px 16px 10px;
+    box-sizing: border-box;
 
     background: rgba(0, 0, 0, 0.12);
 

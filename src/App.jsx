@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -17,8 +17,7 @@ import AcademicPart from "./pages/AcademicPart";
 import SocialPart from "./pages/SocialPart";
 import ParticipantProfile from "./pages/ParticipantProfile";
 import HistoryOfYoungBM from "./pages/HistoryOfYoungBM";
-import SeminarApplyHere from "./pages/SeminarApplyHere";
-import SeminarSpeakers from "./pages/SeminarSpeakers";
+import SeminarSeries from "./pages/SeminarSeries";
 
 import FAQ from "./pages/FAQ";
 import Board2026 from "./pages/Board2026";
@@ -85,14 +84,26 @@ function App() {
                     element={<SponsorsYoungBMol2026 />}
                 />
 
+                {/* Online seminars – first series (all past events) */}
+                <Route
+                    path="/seminar/first-series"
+                    element={<SeminarSeries />}
+                />
+
+                {/* Old seminar links now lead to the series page */}
+                <Route
+                    path="/seminar"
+                    element={<Navigate to="/seminar/first-series" replace />}
+                />
                 <Route
                     path="/seminar/apply-here"
-                    element={<SeminarApplyHere />}
+                    element={<Navigate to="/seminar/first-series" replace />}
                 />
                 <Route
                     path="/seminar/speakers"
-                    element={<SeminarSpeakers />}
+                    element={<Navigate to="/seminar/first-series" replace />}
                 />
+
                 <Route
                     path="/about/about-our-congress"
                     element={<AboutOurCongress />}
