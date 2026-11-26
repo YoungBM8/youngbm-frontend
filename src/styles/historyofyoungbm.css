@@ -205,7 +205,8 @@
     grid-template-columns:repeat(4, 1fr);
     column-gap:50px;
     row-gap:82px;
-    align-items:start;
+    /* cards in a row share the height of the tallest one */
+    align-items:stretch;
 }
 
 .timeline-card{
@@ -224,14 +225,15 @@
 
 .timeline-card-text{
     width:84%;
-    height:405px;
+    /* grows with the text instead of cutting it off */
+    min-height:405px;
+    flex:1;
     background:#d1e5e1;
     color:#03443d;
     padding:34px 26px 28px;
     margin:-45px auto 0;
     position:relative;
     z-index:2;
-    overflow:hidden;
     transform:translateX(22px);
 }
 

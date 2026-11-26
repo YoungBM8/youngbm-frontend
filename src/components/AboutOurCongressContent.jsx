@@ -14,7 +14,7 @@ function EditionLogo({ event }) {
         <img
             src={event.logo}
             alt={event.name}
-            className="about-logo"
+            className={event.logo_round ? "about-logo about-logo--round" : "about-logo"}
             style={{ width: event.logo_width }}
             loading="lazy"
         />

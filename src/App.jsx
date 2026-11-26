@@ -15,8 +15,7 @@ import AcademicPart from "./pages/AcademicPart";
 import SocialPart from "./pages/SocialPart";
 import ParticipantProfile from "./pages/ParticipantProfile";
 import HistoryOfYoungBM from "./pages/HistoryOfYoungBM";
-import SeminarApplyHere from "./pages/SeminarApplyHere";
-import SeminarSpeakers from "./pages/SeminarSpeakers";
+import SeminarSeries from "./pages/SeminarSeries";
 
 import FAQ from "./pages/FAQ";
 import Board from "./pages/Board";
@@ -51,9 +50,13 @@ function App() {
                     <Route path="/bmol/volunteer-zone" element={<VolunteerZoneYoungBMol2026 />} />
                     <Route path="/bmol/sponsors" element={<SponsorsYoungBMol2026 />} />
 
-                    {/* Seminar */}
-                    <Route path="/seminar/apply-here" element={<SeminarApplyHere />} />
-                    <Route path="/seminar/speakers" element={<SeminarSpeakers />} />
+                    {/* Online seminars: first series (all past events) */}
+                    <Route path="/seminar/first-series" element={<SeminarSeries />} />
+
+                    {/* Old seminar addresses lead to the series page */}
+                    <Route path="/seminar" element={<Navigate to="/seminar/first-series" replace />} />
+                    <Route path="/seminar/apply-here" element={<Navigate to="/seminar/first-series" replace />} />
+                    <Route path="/seminar/speakers" element={<Navigate to="/seminar/first-series" replace />} />
 
                     {/* About */}
                     <Route path="/about/our-congress" element={<AboutOurCongress />} />

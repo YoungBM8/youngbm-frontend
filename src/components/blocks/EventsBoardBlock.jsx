@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarDays, Clock, MapPin, Mic, Monitor, Users } from "lucide-react";
 
-import { API, useApi } from "../../api/client";
+import { API, useApi, usePage } from "../../api/client";
 import { useSite } from "../../context/useSite";
 import { editionFullName, editionLocation, editionStatus, formatEditionDates, localDate } from "../../utils/editions";
 import Countdown from "../Countdown";
@@ -10,6 +10,10 @@ import { Loadable } from "../PageState";
 import RichText from "../RichText";
 
 import "../../styles/home-events.css";
+
+// Fallbacks for the page that lists the seminar series (edited in the back office).
+const SERIES_PATH = "/seminar/first-series";
+const SERIES_TITLE = "First series of seminars";
 
 /* ---------------- SMALL BUILDING BLOCKS ---------------- */
 
@@ -210,13 +214,27 @@ function pick(editions) {
     return { featured, previous };
 }
 
+/**
+ * Online seminars: an upcoming one is featured, every finished one is listed
+ * below it (oldest first), as a series.
+ */
+function pickSeminars(editions) {
+    const featured = editions.find((edition) => edition.is_current && editionStatus(edition).variant !== "past") || null;
+    const past = editions.filter((edition) => edition !== featured);
+
+    return { featured, past };
+}
+
 export default function EventsBoardBlock({ section }) {
     const { settings } = useSite();
     const { data, loading, error } = useApi(API.events);
+    const { data: seriesPage } = usePage("seminar-series");
+    const seriesTitle = seriesPage?.title || SERIES_TITLE;
+    const seriesPath = seriesPage?.path || SERIES_PATH;
 
     const editions = data ?? [];
     const congress = pick(editions.filter((edition) => edition.kind === "congress"));
-    const seminar = pick(editions.filter((edition) => edition.kind === "seminar"));
+    const seminar = pickSeminars(editions.filter((edition) => edition.kind === "seminar"));
 
     return (
         <div className="home">
@@ -229,42 +247,6 @@ export default function EventsBoardBlock({ section }) {
                     <h1 className="home-intro-title">{section?.title || "Young Biologists Matter"}</h1>
 
                     <RichText html={section?.body} className="home-intro-text" />
-
-                    {(congress.featured || seminar.featured) && (
-                        <div className="home-next-grid">
-                            {congress.featured && (
-                                <a href="#congresses" className="home-next-card">
-                                    <span className="home-next-icon">
-                                        <Users size={22} strokeWidth={2} aria-hidden="true" />
-                                    </span>
-                                    <span className="home-next-text">
-                                        <span className="home-next-label">Next congress</span>
-                                        <strong>{congress.featured.name}</strong>
-                                        <span>
-                                            {[editionLocation(congress.featured), formatEditionDates(congress.featured)]
-                                                .filter(Boolean)
-                                                .join(" · ")}
-                                        </span>
-                                    </span>
-                                    <ArrowRight className="home-next-arrow" size={18} aria-hidden="true" />
-                                </a>
-                            )}
-
-                            {seminar.featured && (
-                                <a href="#seminars" className="home-next-card">
-                                    <span className="home-next-icon">
-                                        <Monitor size={22} strokeWidth={2} aria-hidden="true" />
-                                    </span>
-                                    <span className="home-next-text">
-                                        <span className="home-next-label">Next online seminar</span>
-                                        <strong>{seminar.featured.kicker || seminar.featured.name}</strong>
-                                        <span>Online · {formatEditionDates(seminar.featured)}</span>
-                                    </span>
-                                    <ArrowRight className="home-next-arrow" size={18} aria-hidden="true" />
-                                </a>
-                            )}
-                        </div>
-                    )}
                 </div>
             </section>
 
@@ -297,7 +279,7 @@ export default function EventsBoardBlock({ section }) {
 
                 {/* ================= ONLINE SEMINARS ================= */}
 
-                {(seminar.featured || seminar.previous) && (
+                {(seminar.featured || seminar.past.length > 0) && (
                     <section className="home-section home-section--tinted" id="seminars">
                         <div className="home-container">
                             <header className="home-section-header">
@@ -311,10 +293,24 @@ export default function EventsBoardBlock({ section }) {
 
                             {seminar.featured && <FeaturedEdition edition={seminar.featured} />}
 
-                            {seminar.previous && (
+                            {seminar.past.length > 0 && (
                                 <>
-                                    <h4 className="home-subheading">Previous seminar</h4>
-                                    <PreviousSeminar edition={seminar.previous} />
+                                    <h4 className={`home-subheading ${seminar.featured ? "" : "home-subheading--first"}`.trim()}>
+                                        Past events · {seriesTitle}
+                                    </h4>
+
+                                    <div className="home-mini-list">
+                                        {seminar.past.map((edition) => (
+                                            <PreviousSeminar edition={edition} key={edition.id} />
+                                        ))}
+                                    </div>
+
+                                    <div className="home-actions home-actions--after-list">
+                                        <Link to={seriesPath} className="home-button home-button--ghost">
+                                            Seminars and speakers
+                                            <ArrowRight size={16} aria-hidden="true" />
+                                        </Link>
+                                    </div>
                                 </>
                             )}
                         </div>
